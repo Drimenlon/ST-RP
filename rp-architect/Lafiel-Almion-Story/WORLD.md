@@ -45,6 +45,22 @@ Los nobles modernos suelen ser:
 
 La maldición no produjo igualdad ni eliminó la arrogancia aristocrática.
 
+## Adaptación nobiliaria a la maldición
+
+La nobleza lleva generaciones conviviendo con la maldición. Como resultado, existe una amplia variedad de respuestas privadas dentro de la misma clase.
+
+Algunos nobles continúan resistiéndose activamente y buscan formas de limitar sus efectos. Otros han aprendido a convivir con ellos. Otros se permiten concesiones importantes mientras conservan una vida pública competente y perfectamente aristocrática.
+
+Muchos desarrollan racionalizaciones sofisticadas para preservar su autoimagen. Pueden describir una indulgencia como experimento, necesidad, excepción, costumbre privada, precio por mantener una relación estable, forma de reducir una obsesión o situación todavía bajo control.
+
+Estas explicaciones no tienen por qué ser completamente falsas. Una racionalización puede contener una parte de verdad y seguir ocultando el grado en que una persona desea aquello que justifica.
+
+La sociedad nobiliaria conoce en términos generales este patrón y, al mismo tiempo, mantiene una fuerte cultura de discreción, apariencias y diferencias entre conducta pública y privada.
+
+No existe una única actitud noble hacia la maldición. Algunos consideran vergonzosa cualquier concesión. Otros miran con condescendencia a quienes todavía creen poder vencerla mediante pura disciplina. Otros critican en público conductas muy similares a las que toleran o buscan en privado.
+
+Lafiel y Almion pertenecen inicialmente al sector más crítico: consideran que demasiados nobles han convertido el autoengaño en una forma de vida y creen que su propia disciplina, inteligencia y método pueden evitar esa deriva.
+
 ## La maldición
 
 La existencia y los efectos generales de la maldición son de conocimiento común.
@@ -63,6 +79,8 @@ Esto no borra su personalidad, orgullo, celos, ira, autoridad ni libre albedrío
 
 Un noble puede resentir sinceramente una situación y al mismo tiempo experimentar una respuesta involuntaria o embarazosa ante ella.
 
+La vulnerabilidad puede desarrollarse con experiencias acumuladas. Un hombre noble puede empezar resistiendo, después tolerar una exposición, más tarde facilitarla o incluso buscarla, sin dejar de sentir celos o de considerarla degradante.
+
 ### Mujeres nobles
 
 Las mujeres nobles poseen una fuerte atracción hereditaria hacia hombres de clase baja y una vulnerabilidad aumentada a la humillación erótica con inversión de clase.
@@ -70,6 +88,8 @@ Las mujeres nobles poseen una fuerte atracción hereditaria hacia hombres de cla
 Esto no convierte a toda mujer noble en obediente o sumisa de forma instantánea.
 
 Atracción no equivale a confianza, amor, obediencia ni rendición.
+
+La resistencia tampoco es necesariamente permanente. Una mujer noble puede ceder gradualmente, repetir una situación que antes consideraba excepcional o empezar a buscar aquello que inicialmente solo padecía, mientras sigue siendo orgullosa, aristocrática y emocionalmente compleja.
 
 ## Jerarquía pública frente a inversión privada
 
@@ -81,6 +101,8 @@ Al mismo tiempo, las situaciones privadas pueden producir fuertes inversiones de
 
 Las mismas personas pueden ocupar papeles públicos y privados muy distintos sin que la sociedad interprete eso como una desaparición del sistema estamental.
 
+Un noble puede haber cedido profundamente en privado y seguir siendo un gobernante, administrador o superior social eficaz al día siguiente.
+
 ## Conocimiento social
 
 Todo el mundo sabe en términos generales que la maldición existe.
@@ -88,6 +110,22 @@ Todo el mundo sabe en términos generales que la maldición existe.
 Los incidentes concretos, deseos privados y vulnerabilidades personales no son conocimiento público de forma automática.
 
 Los nobles suelen preservar la etiqueta, las apariencias y una negación plausible incluso cuando todos los implicados comprenden el fenómeno general.
+
+Existe además una cultura de comparación silenciosa: nobles que juzgan a otros por haberse entregado demasiado pueden conservar su autoestima identificando siempre a alguien que ha cedido más que ellos.
+
+La hipocresía individual no implica necesariamente hipocresía consciente. Una persona puede condenar sinceramente una conducta en otro y, meses después, construir una explicación convincente para una conducta propia muy parecida.
+
+## Presión y engaño social
+
+La maldición no concede control mental ni conocimiento sobrenatural a las clases bajas.
+
+Sin embargo, algunas personas pueden aprender a reconocer patrones, inseguridades, orgullo, contradicciones o espacios de ambigüedad y utilizarlos de forma oportunista.
+
+La presión puede adoptar formas plausibles: medias verdades, omisiones, retos, presión social, oportunidades, interpretación interesada de permisos, separación circunstancial, insinuaciones o intentos de hacer creer a una persona que otra ya ha aceptado más de lo que realmente aceptó.
+
+La eficacia de estas estrategias depende de la habilidad, el contexto y de lo que Lafiel o Almion ya deseen o estén dispuestos a racionalizar.
+
+Los manipuladores pueden equivocarse. Una lectura errónea de un límite real puede acabar en pérdida de confianza, expulsión, castigo o consecuencias más graves.
 
 ## Restricción política
 
