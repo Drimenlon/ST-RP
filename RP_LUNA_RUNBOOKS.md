@@ -1,56 +1,56 @@
-# RP Luna Runbooks
+# Runbooks de RP para Luna
 
-Host baseline: **SillyTavern 1.19.0 stable (adopted).** `LUNA_READY` is limited to the known operations below; it does not authorize undocumented repair or broaden a tool's guarantees.
+Baseline del host: **SillyTavern 1.19.0 stable (adopted).** `LUNA_READY` se limita a las operaciones conocidas que aparecen a continuación; no autoriza reparaciones no documentadas ni amplía las garantías de una herramienta.
 
 ## Prompt Inspector
 
-- **Status:** validated / adopted.
-- **Purpose:** inspect the constructed pre-final context.
-- **Limit:** does not prove the exact final request received by the provider.
-- **LUNA_READY:** YES for known install/configuration/smoke workflows. Verify the expected preset and context before any authorized generation; if unexpected RP instructions or data appear, stop. Do not claim provider-payload verification from this view alone.
+- **Estado:** validado / adoptado.
+- **Propósito:** inspeccionar el contexto construido antes de la llamada final.
+- **Límite:** no demuestra la request final exacta recibida por el provider.
+- **LUNA_READY:** YES para workflows conocidos de instalación/configuración/smoke test. Verificar el preset y contexto esperados antes de cualquier generación autorizada; si aparecen instrucciones o datos inesperados de otro RP, hacer STOP. No afirmar verificación del payload del provider basándose únicamente en esta vista.
 
 ## Inject Manager
 
-- **Status:** validated / adopted.
-- **Purpose:** observe/manage SillyTavern script injections.
-- **Limit:** visibility does not establish which producer originated an injection.
-- **LUNA_READY:** YES for known mechanical operations. Do not infer provenance or modify unrelated injections.
+- **Estado:** validado / adoptado.
+- **Propósito:** observar/gestionar inyecciones de scripts de SillyTavern.
+- **Límite:** la visibilidad no establece qué productor originó una inyección.
+- **LUNA_READY:** YES para operaciones mecánicas conocidas. No inferir procedencia ni modificar inyecciones no relacionadas.
 
 ## WorldInfo Info
 
-- **Status:** validated / adopted.
-- **Purpose:** observe actual World Info activation state.
-- **Limit:** the panel reflects the last constructed context and may be stale until context is reconstructed.
-- **LUNA_READY:** YES for known install/configuration/smoke workflows. Reconstruct context before relying on a changed activation state.
+- **Estado:** validado / adoptado.
+- **Propósito:** observar el estado real de activación de World Info.
+- **Límite:** el panel refleja el último contexto construido y puede quedar desactualizado hasta que se reconstruya el contexto.
+- **LUNA_READY:** YES para workflows conocidos de instalación/configuración/smoke test. Reconstruir el contexto antes de confiar en un cambio de estado de activación.
 
 ## Memory Books
 
-- **Version:** 9.3.4
-- **Pinned commit:** `f779299a573aeb0701cf0e3410c40058d1ee0ddd`
-- **Host compatibility:** PASS on SillyTavern 1.19.0; the prior `sha256` module-export load error from ST 1.17.0 was resolved on the adopted host.
-- **Observed evidence:** fact, relationship, consequence, and open-thread preservation; source exclusion and memory presence in context; useful temporal recall; manual correction; and basic branch independence passed in the recorded partial acceptance.
-- **Still open:** remaining isolation/Presence and rollback acceptance; Phase 1 was not completed.
-- **LUNA_READY:** **NO**. Do not create or apply a production Memory Books procedure, and do not describe the extension as fully accepted/stable.
+- **Versión:** 9.3.4
+- **Commit fijado:** `f779299a573aeb0701cf0e3410c40058d1ee0ddd`
+- **Compatibilidad con el host:** PASS en SillyTavern 1.19.0; el error previo de carga por exportación del módulo `sha256` de ST 1.17.0 quedó resuelto en el host adoptado.
+- **Evidencia observada:** preservación de hechos, relaciones, consecuencias e hilos abiertos; exclusión de fuentes y presencia de memoria en contexto; recuperación temporal útil; corrección manual; e independencia básica de ramas superaron la aceptación parcial registrada.
+- **Todavía pendiente:** aceptación restante de aislamiento/Presence y rollback; la Fase 1 no se completó.
+- **LUNA_READY:** **NO**. No crear ni aplicar un procedimiento de producción para Memory Books y no describir la extensión como plenamente aceptada/estable.
 
-## Existing components and boundaries
+## Componentes existentes y límites
 
-- **Summaryception:** pre-existing summarization/memory component. No coexistence or replacement policy is established here.
-- **Presence:** pre-existing; relevant to group behavior, but no group-isolation runbook is closed.
-- **Recast:** pre-existing and may transform outputs; do not assume its effects or change it as a test workaround.
-- **Gallery Images:** existing protected extension. Do not modify it or its data as part of RP execution.
-- Character Locks, World Info Locks, lorebook ordering, Guided Generations, Story Mode, Custom Scenario, Timelines, and Chat Top Bar are not closed capabilities; no Luna procedure is defined here.
+- **Summaryception:** componente de resumen/memoria preexistente. Aquí no se establece ninguna política de coexistencia o sustitución.
+- **Presence:** preexistente; relevante para comportamiento de grupo, pero no hay cerrado un runbook de aislamiento grupal.
+- **Recast:** preexistente y puede transformar outputs; no asumir sus efectos ni cambiarlo como workaround de pruebas.
+- **Gallery Images:** extensión existente protegida. No modificarla ni modificar sus datos como parte de la ejecución del RP.
+- Character Locks, World Info Locks, orden de lorebooks, Guided Generations, Story Mode, Custom Scenario, Timelines y Chat Top Bar no son capabilities cerradas; aquí no se define ningún procedimiento para Luna.
 
-## Reusable Luna task
+## Tarea reutilizable para Luna
 
 ```text
-TASK: <mechanical action>
-TARGET: <RP / file / capability>
-SOURCE OF TRUTH: <READY spec and applicable runbook>
-MODIFY: <explicit surfaces>
-PRESERVE: <explicit surfaces>
-VERIFY: <objective checks and expected results>
-STOP IF: runtime differs; a required field is missing; ambiguity appears;
-          destructive work is unexpected; another RP's state appears; or a
-          compatibility fix would be required.
-RESULT: PASS / BLOCKED
+TAREA: <acción mecánica>
+OBJETIVO: <RP / archivo / capability>
+FUENTE DE VERDAD: <especificación READY y runbook aplicable>
+MODIFICAR: <superficies explícitas>
+PRESERVAR: <superficies explícitas>
+VERIFICAR: <comprobaciones objetivas y resultados esperados>
+STOP SI: el runtime difiere; falta un campo requerido; aparece ambigüedad;
+         el trabajo destructivo es inesperado; aparece estado de otro RP; o
+         sería necesario un arreglo de compatibilidad.
+RESULTADO: PASS / BLOCKED
 ```
