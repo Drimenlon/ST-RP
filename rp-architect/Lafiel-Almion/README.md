@@ -2,11 +2,13 @@
 
 ```yaml
 rp_architect_status: READY
-technical_execution_status: PENDING_INFRASTRUCTURE_VALIDATION
+technical_execution_status: READY_FOR_LUNA
 rp_id: lafiel-almion
 rp_name: Lafiel & Almion
 group_name: Lafiel & Almion
 user_role: narrator_director
+preset_api_family: openai
+preset_base: Default
 ```
 
 ## Purpose
@@ -119,6 +121,19 @@ Do not merge these into one generic "world" entry unless RP Architect explicitly
 
 Do not invent extra keys, random activation, vectors, timed effects, inclusion groups or Author's Note usage.
 
+### World Info global-settings precondition
+
+`WORLD_INFO.md` defines RP-required World Info behavior, but some SillyTavern World Info settings are global rather than RP-local.
+
+Before materializing the lorebook, Luna must verify that every required global World Info setting already matches the runtime.
+
+If any required global setting does not match:
+
+- STOP the World Info materialization;
+- report the exact mismatch;
+- do NOT change that global setting merely for this RP;
+- do NOT modify unrelated chats/lorebooks to make the package fit.
+
 ## Memory
 
 The RP initial test does not depend on Memory Books.
@@ -133,24 +148,29 @@ This package can use normal group chat but does not depend on unvalidated Memory
 
 Private character thoughts must not become shared knowledge merely because Lafiel and Almion are in the same group chat.
 
-## Preset / configuration requirement
+## Preset / configuration binding
 
-The semantic requirement is CLOSED:
+The preset binding data required by the materialization layer is explicit and closed:
 
-The RP must run under a configuration that enforces the behavior defined by `NARRATIVE_RULES.md`, preserves the character/card/world mappings in this package, and does not inherit foreign RP instructions.
+```yaml
+preset_api_family: openai
+preset_base: Default
+```
 
-RP Architect is not responsible for inventing an undocumented SillyTavern binding mechanism.
+Interpretation:
 
-The exact technical preset identity/binding must be validated by Infrastructure/Luna against the current contracts and runtime.
+- API/preset family: SillyTavern OpenAI preset family.
+- Exact base preset: `Default`.
+- The base preset is the starting technical substrate for the RP-specific narrative configuration; it is not permission to inherit another RP's currently selected preset.
+- `NARRATIVE_RULES.md` remains the authoritative RP-specific narrative behavior to be materialized according to the approved preset/narrative prompt runbook.
+- Do not infer the provider/preset from current runtime state.
+- Do not substitute another base preset because it happens to be selected.
 
-Therefore:
+With these values supplied, the package is complete for the basic materialization layer and may return to Luna.
 
-- `rp_architect_status` remains `READY`;
-- `technical_execution_status` remains `PENDING_INFRASTRUCTURE_VALIDATION` until that technical mapping is confirmed.
+`technical_execution_status: READY_FOR_LUNA`
 
-If the current runbooks require an exact preset identity before Luna can modify SillyTavern and no authorized mapping exists, Luna must return a **technical blocker for preset/config binding** to Infrastructure/Sol.
-
-It must NOT report the RP itself as semantically incomplete and must NOT redesign the prompt requirements.
+Runtime preconditions and LUNA_READY gates still apply. A runtime mismatch is a technical STOP condition, not a semantic reopening of the RP.
 
 ## Preserve
 
@@ -172,7 +192,8 @@ Verify at least:
 - the group `Lafiel & Almion` has only the intended required character participants;
 - `{{user}}` is represented semantically as narrator/director, not servant;
 - the opening matches `OPENING.md`;
-- the effective preset/config contains no foreign RP prompt or inherited instructions;
+- preset family is `openai` and the exact base used is `Default`;
+- the effective RP-specific preset/config contains no foreign RP prompt or inherited instructions;
 - lorebook identity is exactly `Lafiel-Almion — World`;
 - World Info entries/keys/strategies/orders/content match `WORLD_INFO.md`;
 - WorldInfo Info activation behavior matches the verification cases in `WORLD_INFO.md`;
@@ -209,6 +230,7 @@ Do not downgrade `rp_architect_status: READY` because of that technical blocker.
 STOP if:
 
 - any required capability is not `LUNA_READY` for the requested operation;
+- any RP-required global World Info setting differs from the existing runtime value;
 - it needs to decide how to reinterpret semantic content between surfaces;
 - it cannot create/bind the exact World Info configuration without an authorized procedure;
 - it finds another Lafiel/Almion and is not explicitly authorized to update it;
