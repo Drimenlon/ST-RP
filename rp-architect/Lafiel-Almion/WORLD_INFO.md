@@ -22,23 +22,27 @@ If the current Luna runbooks do not authorize creation/binding of this exact Wor
 
 ## Activation settings
 
-### Global World Info settings
+### Authorized global World Info changes
 
-This RP package does **not own or require specific values for SillyTavern's global World Info settings**.
+This package explicitly authorizes Luna to change exactly two SillyTavern **global** World Info settings as part of this RP materialization:
 
-Preserve the runtime's existing global values. Do not change global World Info configuration for this RP.
+- `Max Recursion Steps = 1`
+- `Alert on overflow = ON`
 
-In particular, this package does not require any specific value for:
+This authorization is deliberate and global. Luna must not treat the current runtime values (`0` / `OFF`) as a blocker. If they differ, Luna is authorized to change them to the values above.
+
+These two values become the intended global World Info baseline after materialization; do not revert them at the end of the task.
+
+No other global World Info setting is owned or authorized for change by this package. Preserve the runtime's existing values for all other global World Info settings, including:
 
 - Include Names;
 - Case-sensitive keys;
 - Match whole words;
-- Max Recursion Steps;
-- Alert on overflow;
 - global Context/Budget;
-- Min Activations.
+- Min Activations;
+- any other global World Info option not explicitly listed above.
 
-The pilot intentionally avoids recursive lore chains and does not depend on overflow alerts. Runtime values such as `Max Recursion Steps = 0` and `Alert on overflow = OFF` are therefore acceptable and must be preserved.
+Luna must verify the two authorized changes after applying them and must STOP rather than altering any additional global World Info setting to make this RP work.
 
 ### Entry-level defaults
 
@@ -373,19 +377,21 @@ For this pilot:
 - Do not use timed effects.
 - Do not use automation IDs.
 - Do not use Author's Note positions.
-- Do not introduce recursive lore chains.
+- Do not introduce recursive lore chains beyond the explicitly authorized global recursion depth of `1`.
 
-The goal is predictable, inspectable activation during the first RP test without changing global World Info behavior.
+The goal is predictable, inspectable activation during the first RP test.
 
 ## Verification
 
 When implementation becomes authorized, verify with WorldInfo Info + Prompt Inspector:
 
-1. Entries 001, 002, 004, 005, 006, 007 and 008 are active every generation in the bound group chat.
-2. Entry 003 is inactive without settlement/location keys and activates when one of its keys appears under the existing global matching behavior.
-3. Entry 009 is inactive without boundary/discipline/servant-related keys and activates on a matching key under the existing global matching behavior.
-4. Entry 010 activates when Lafiel/Crown/succession terminology enters scanned context under the existing global matching behavior.
-5. Entry 011 activates when curse/research terminology enters scanned context under the existing global matching behavior.
-6. No entry from this lorebook activates in unrelated chats.
-7. No unrelated lorebook content appears because of this package.
-8. Existing global World Info settings remain unchanged.
+1. Global `Max Recursion Steps` is exactly `1`.
+2. Global `Alert on overflow` is `ON`.
+3. No other global World Info setting was changed by this package.
+4. Entries 001, 002, 004, 005, 006, 007 and 008 are active every generation in the bound group chat.
+5. Entry 003 is inactive without settlement/location keys and activates when one of its keys appears.
+6. Entry 009 is inactive without boundary/discipline/servant-related keys and activates on a matching key.
+7. Entry 010 activates when Lafiel/Crown/succession terminology enters scanned context.
+8. Entry 011 activates when curse/research terminology enters scanned context.
+9. No entry from this lorebook activates in unrelated chats.
+10. No unrelated lorebook content appears because of this package.
