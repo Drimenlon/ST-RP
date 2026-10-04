@@ -1,7 +1,8 @@
 # Lafiel & Almion
 
 ```yaml
-status: DRAFT_NOT_READY
+rp_architect_status: READY
+technical_execution_status: PENDING_INFRASTRUCTURE_VALIDATION
 rp_id: lafiel-almion
 rp_name: Lafiel & Almion
 group_name: Lafiel & Almion
@@ -13,6 +14,25 @@ user_role: narrator_director
 Primer RP de producción/prueba centrado en Lafiel y Almion antes de la entrada de Dalkon.
 
 La dinámica principal es cuckolding psicológico, humillación aristocrática, celos, tensión de clase, orgullo y deseo contradictorio. No es una trama revolucionaria ni un triángulo amoroso genérico.
+
+## Semantic readiness
+
+Este paquete está **cerrado semánticamente por RP Architect** para esta versión del piloto.
+
+`rp_architect_status: READY` significa que Luna/Infrastructure no deben reabrir ni reinterpretar:
+
+- personajes;
+- relaciones;
+- worldbuilding;
+- user role;
+- NPC de prueba;
+- knowledge boundaries;
+- narrativa/pacing;
+- opening;
+- World Info deseado;
+- intención del RP.
+
+Si durante la implementación aparece una carencia puramente técnica —por ejemplo un binding, mapping o capability no Luna-ready— debe reportarse como bloqueo técnico concreto. Eso no convierte este RP otra vez en `DRAFT`.
 
 ## Authoritative package
 
@@ -47,11 +67,11 @@ The initial lower-class male pressure point is the supporting NPC `Rhevan`, defi
 - `ALMION.md` → Character Card `Almion`.
 - `WORLD.md` → semantic canon reference; do not dump this file wholesale into a card.
 - `WORLD_INFO.md` → desired Chat Lorebook `Lafiel-Almion — World`, with exact entry decomposition and activation semantics.
-- `NARRATIVE_RULES.md` → requisitos del prompt global/preset del RP; no duplicar innecesariamente dentro de las cards.
+- `NARRATIVE_RULES.md` → requisitos semánticos del comportamiento global/preset del RP; no duplicar innecesariamente dentro de las cards.
 - `GROUP.md` → definición del Group Chat `Lafiel & Almion`, scenario compartido, narrator semantics, supporting NPC and knowledge boundaries.
 - `OPENING.md` → greeting/opening inicial del grupo.
 
-If Luna lacks an approved runbook for any exact creation/binding operation described here, it must STOP on that capability rather than invent another representation.
+If Luna lacks an approved runbook for any exact creation/binding operation described here, it must STOP on that technical capability rather than invent another representation.
 
 ## Required characters
 
@@ -113,17 +133,24 @@ This package can use normal group chat but does not depend on unvalidated Memory
 
 Private character thoughts must not become shared knowledge merely because Lafiel and Almion are in the same group chat.
 
-## Preset gate
+## Preset / configuration requirement
 
-The RP requires an explicitly identified RP-specific preset/configuration bound to this group.
+The semantic requirement is CLOSED:
 
-The exact preset identity and binding are still unresolved.
+The RP must run under a configuration that enforces the behavior defined by `NARRATIVE_RULES.md`, preserves the character/card/world mappings in this package, and does not inherit foreign RP instructions.
 
-Therefore the package remains:
+RP Architect is not responsible for inventing an undocumented SillyTavern binding mechanism.
 
-`DRAFT_NOT_READY`
+The exact technical preset identity/binding must be validated by Infrastructure/Luna against the current contracts and runtime.
 
-Do not implement in SillyTavern until the preset binding is closed and the package is explicitly promoted to `status: READY`.
+Therefore:
+
+- `rp_architect_status` remains `READY`;
+- `technical_execution_status` remains `PENDING_INFRASTRUCTURE_VALIDATION` until that technical mapping is confirmed.
+
+If the current runbooks require an exact preset identity before Luna can modify SillyTavern and no authorized mapping exists, Luna must return a **technical blocker for preset/config binding** to Infrastructure/Sol.
+
+It must NOT report the RP itself as semantically incomplete and must NOT redesign the prompt requirements.
 
 ## Preserve
 
@@ -137,15 +164,15 @@ Luna must preserve:
 - SillyTavern core;
 - Author's Note, which is user-controlled and out of scope.
 
-## Verify when READY
+## Verify during/after implementation
 
-After implementation verify at least:
+Verify at least:
 
 - exactly the intended Lafiel and Almion cards exist with supplied fields;
 - the group `Lafiel & Almion` has only the intended required character participants;
 - `{{user}}` is represented semantically as narrator/director, not servant;
 - the opening matches `OPENING.md`;
-- the intended preset is bound and no foreign RP prompt is inherited;
+- the effective preset/config contains no foreign RP prompt or inherited instructions;
 - lorebook identity is exactly `Lafiel-Almion — World`;
 - World Info entries/keys/strategies/orders/content match `WORLD_INFO.md`;
 - WorldInfo Info activation behavior matches the verification cases in `WORLD_INFO.md`;
@@ -153,15 +180,40 @@ After implementation verify at least:
 - Dalkon is not a participant and is not implicitly substituted for Rhevan;
 - no unrelated RP is modified.
 
-## STOP IF
+## STOP / escalation rules
 
-Luna must STOP if:
+Luna must distinguish semantic and technical blockers.
 
-- preset/binding remains unresolved;
+### Semantic blocker
+
+Only report a semantic blocker if package files genuinely omit or contradict narrative meaning that RP Architect must decide.
+
+If that occurs:
+
+`RP_ARCHITECT_BLOCKED`
+
+and identify the exact missing/contradictory semantic decision.
+
+### Technical blocker
+
+If the RP is semantically closed but implementation requires a capability, binding or runbook that is not currently authorized:
+
+`TECHNICAL_EXECUTION_BLOCKED`
+
+and identify the exact capability/binding that Infrastructure/Sol must close.
+
+Do not downgrade `rp_architect_status: READY` because of that technical blocker.
+
+### Mandatory STOP cases
+
+STOP if:
+
 - any required capability is not `LUNA_READY` for the requested operation;
 - it needs to decide how to reinterpret semantic content between surfaces;
-- it cannot create/bind the exact World Info configuration without an undocumented procedure;
+- it cannot create/bind the exact World Info configuration without an authorized procedure;
 - it finds another Lafiel/Almion and is not explicitly authorized to update it;
 - it detects instructions from another RP in context;
 - it would need to modify SillyTavern core or a protected extension;
 - any manifest file is missing or materially contradictory.
+
+In every case, preserve all already-closed RP semantics and report only the unresolved layer.
