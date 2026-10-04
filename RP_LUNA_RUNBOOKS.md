@@ -20,7 +20,7 @@ Baseline del host: **SillyTavern 1.19.0 stable (adopted).** `LUNA_READY` se limi
 
 - **Estado:** validado / adoptado.
 - **Propósito:** observar el estado real de activación de World Info.
-- **LímITE:** el panel refleja el último contexto construido y puede quedar desactualizado hasta que se reconstruya el contexto.
+- **Límite:** el panel refleja el último contexto construido y puede quedar desactualizado hasta que se reconstruya el contexto.
 - **LUNA_READY:** YES para workflows conocidos de instalación/configuración/smoke test. Reconstruir el contexto antes de confiar en un cambio de estado de activación.
 
 ## Memory Books
