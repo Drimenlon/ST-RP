@@ -8,7 +8,7 @@ rp_name: Lafiel & Almion
 group_name: Lafiel & Almion
 user_role: narrator_director
 preset_api_family: openai
-preset_base: Default
+preset_base: GLM 5.3 Flash
 ```
 
 ## Purpose
@@ -154,13 +154,13 @@ The preset binding data required by the materialization layer is explicit and cl
 
 ```yaml
 preset_api_family: openai
-preset_base: Default
+preset_base: GLM 5.3 Flash
 ```
 
 Interpretation:
 
 - API/preset family: SillyTavern OpenAI preset family.
-- Exact base preset: `Default`.
+- Exact base preset: `GLM 5.3 Flash`.
 - The base preset is the starting technical substrate for the RP-specific narrative configuration; it is not permission to inherit another RP's currently selected preset.
 - `NARRATIVE_RULES.md` remains the authoritative RP-specific narrative behavior to be materialized according to the approved preset/narrative prompt runbook.
 - Do not infer the provider/preset from current runtime state.
@@ -192,7 +192,7 @@ Verify at least:
 - the group `Lafiel & Almion` has only the intended required character participants;
 - `{{user}}` is represented semantically as narrator/director, not servant;
 - the opening matches `OPENING.md`;
-- preset family is `openai` and the exact base used is `Default`;
+- preset family is `openai` and the exact base used is `GLM 5.3 Flash`;
 - the effective RP-specific preset/config contains no foreign RP prompt or inherited instructions;
 - lorebook identity is exactly `Lafiel-Almion — World`;
 - World Info entries/keys/strategies/orders/content match `WORLD_INFO.md`;
