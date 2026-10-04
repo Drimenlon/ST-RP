@@ -44,11 +44,12 @@ Luna debe leer los archivos de este paquete en este orden:
 1. `README.md` — manifest, mapping y gates de ejecución.
 2. `WORLD.md` — canon persistente/prosa de referencia del mundo.
 3. `WORLD_INFO.md` — especificación exacta de lorebook/World Info: entries, keys, strategy, position, order y contenido.
-4. `NARRATIVE_RULES.md` — reglas globales de narración, pacing y comportamiento.
-5. `LAFIEL.md` — definición operativa de la card de Lafiel.
-6. `ALMION.md` — definición operativa de la card de Almion.
-7. `GROUP.md` — participantes, narrator role, NPC de prueba, escenario compartido y knowledge boundaries.
-8. `OPENING.md` — opening grupal exacto y handoff al narrador.
+4. `NARRATIVE_RULES.md` — fuente semántica de reglas globales de narración, pacing y comportamiento.
+5. `PRESET_PROMPTS.md` — mapping de implementación exacto de Narrative Rules a Main Prompt, Auxiliary Prompt y Post-History Instructions.
+6. `LAFIEL.md` — definición operativa de la card de Lafiel.
+7. `ALMION.md` — definición operativa de la card de Almion.
+8. `GROUP.md` — participantes, narrator role, NPC de prueba, escenario compartido y knowledge boundaries.
+9. `OPENING.md` — opening grupal exacto y handoff al narrador.
 
 No inferir contenido desde otros archivos del repositorio salvo los contratos globales de infraestructura.
 
@@ -70,7 +71,8 @@ The initial lower-class male pressure point is the supporting NPC `Rhevan`, defi
 - `ALMION.md` → Character Card `Almion`.
 - `WORLD.md` → semantic canon reference; do not dump this file wholesale into a card.
 - `WORLD_INFO.md` → desired Chat Lorebook `Lafiel-Almion — World`, with exact entry decomposition and activation semantics.
-- `NARRATIVE_RULES.md` → requisitos semánticos del comportamiento global/preset del RP; deben materializarse en el preset RP-specific `Lafiel & Almion`, no en el preset base compartido.
+- `NARRATIVE_RULES.md` → semantic source for RP-wide narrative behavior.
+- `PRESET_PROMPTS.md` → exact RP-specific prompt content and target fields inside preset `Lafiel & Almion`.
 - `GROUP.md` → definición del Group Chat `Lafiel & Almion`, scenario compartido, narrator semantics, supporting NPC and knowledge boundaries.
 - `OPENING.md` → greeting/opening inicial del grupo.
 
@@ -166,7 +168,14 @@ Interpretation:
 - Luna must create a new RP-specific preset named exactly `Lafiel & Almion`, matching the Group Chat name.
 - The new preset must be created from/copy the base preset `Default` according to the approved preset materialization runbook.
 - `Default` is a source/base only. Do NOT modify the shared `Default` preset in place.
-- `NARRATIVE_RULES.md` remains the authoritative RP-specific narrative behavior and must be materialized into the new `Lafiel & Almion` preset according to the approved runbook.
+- `NARRATIVE_RULES.md` is the semantic source of RP-wide narrative behavior.
+- `PRESET_PROMPTS.md` is the authoritative implementation mapping and exact text for the RP-specific preset.
+- RP-specific prompt text is written only to:
+  1. `Main Prompt`
+  2. `Auxiliary Prompt`
+  3. `Post-History Instructions`
+- World Info, character description/personality, scenario, chat examples and chat history remain their normal dynamic slots and must not receive duplicated Narrative Rules text.
+- `Persona Description` is user-controlled and must remain untouched.
 - Bind/use the new `Lafiel & Almion` preset for this RP/group according to the approved runbook.
 - Do not infer the provider or model from the preset name. Connection profile/provider/model are separate runtime concerns.
 - Do not substitute the currently selected preset or any other preset merely because it is active in the runtime.
@@ -183,11 +192,13 @@ Luna must preserve:
 
 - other RPs, cards, groups and chats;
 - presets/configs not owned by this RP;
+- shared base preset `Default`;
 - unrelated lorebooks;
 - Summaryception, Presence and Recast unless explicitly authorized;
 - Gallery Images implementation/settings/data;
 - SillyTavern core;
-- Author's Note, which is user-controlled and out of scope.
+- Author's Note, which is user-controlled and out of scope;
+- Persona Description, which is user-controlled and out of scope for this package.
 
 ## Verify during/after implementation
 
@@ -198,8 +209,10 @@ Verify at least:
 - `{{user}}` is represented semantically as narrator/director, not servant;
 - the opening matches `OPENING.md`;
 - preset family is `openai`;
-- exact base preset used to create the RP preset is `Default`;
-- RP-specific preset `Lafiel & Almion` exists and contains the intended RP narrative configuration;
+- exact base preset used to create the RP preset is `Default` and remains unchanged;
+- RP-specific preset `Lafiel & Almion` exists;
+- `Main Prompt`, `Auxiliary Prompt` and `Post-History Instructions` match `PRESET_PROMPTS.md` exactly;
+- dynamic World Info/card/scenario/examples/history slots remain dynamic and do not contain duplicated RP prompt prose;
 - the effective RP-specific preset/config contains no foreign RP prompt or inherited instructions;
 - lorebook identity is exactly `Lafiel-Almion — World`;
 - World Info entries/keys/strategies/orders/content match `WORLD_INFO.md`;
@@ -240,6 +253,7 @@ STOP if:
 - any RP-required global World Info setting differs from the existing runtime value;
 - it needs to decide how to reinterpret semantic content between surfaces;
 - it cannot create/bind the exact World Info configuration without an authorized procedure;
+- it cannot create the RP-specific preset from `Default` without modifying the shared base;
 - it finds another Lafiel/Almion and is not explicitly authorized to update it;
 - it detects instructions from another RP in context;
 - it would need to modify SillyTavern core or a protected extension;
