@@ -43,7 +43,7 @@ Luna debe leer los archivos de este paquete en este orden:
 
 1. `README.md` — manifest, mapping y gates de ejecución.
 2. `WORLD.md` — canon persistente/prosa de referencia del mundo.
-3. `WORLD_INFO.md` — especificación exacta de lorebook/World Info: entries, keys, strategy, position, order y contenido.
+3. `WORLD_INFO.md` — especificación exacta de lorebook/World Info: entries, keys, strategy, position, order, contenido y los dos cambios globales explícitamente autorizados.
 4. `NARRATIVE_RULES.md` — fuente semántica de reglas globales de narración, pacing y comportamiento.
 5. `PRESET_PROMPTS.md` — mapping de implementación exacto de Narrative Rules a Main Prompt, Auxiliary Prompt y Post-History Instructions.
 6. `LAFIEL.md` — definición operativa de la card de Lafiel.
@@ -70,7 +70,7 @@ The initial lower-class male pressure point is the supporting NPC `Rhevan`, defi
 - `LAFIEL.md` → Character Card `Lafiel`.
 - `ALMION.md` → Character Card `Almion`.
 - `WORLD.md` → semantic canon reference; do not dump this file wholesale into a card.
-- `WORLD_INFO.md` → desired Chat Lorebook `Lafiel-Almion — World`, with exact entry decomposition and activation semantics.
+- `WORLD_INFO.md` → desired Chat Lorebook `Lafiel-Almion — World`, with exact entry decomposition and activation semantics, plus the only authorized global World Info changes.
 - `NARRATIVE_RULES.md` → semantic source for RP-wide narrative behavior.
 - `PRESET_PROMPTS.md` → exact RP-specific prompt content and target fields inside preset `Lafiel & Almion`.
 - `GROUP.md` → definición del Group Chat `Lafiel & Almion`, scenario compartido, narrator semantics, supporting NPC and knowledge boundaries.
@@ -124,18 +124,32 @@ Do not merge these into one generic "world" entry unless RP Architect explicitly
 
 Do not invent extra keys, random activation, vectors, timed effects, inclusion groups or Author's Note usage.
 
-### World Info global-settings precondition
+### Explicitly authorized global World Info changes
 
-`WORLD_INFO.md` defines RP-required World Info behavior, but some SillyTavern World Info settings are global rather than RP-local.
+The user/package owner explicitly authorizes Luna to change exactly these two **global** SillyTavern World Info settings during materialization:
 
-Before materializing the lorebook, Luna must verify that every required global World Info setting already matches the runtime.
+```yaml
+max_recursion_steps: 1
+alert_on_overflow: true
+```
 
-If any required global setting does not match:
+Human-readable values:
 
-- STOP the World Info materialization;
-- report the exact mismatch;
-- do NOT change that global setting merely for this RP;
-- do NOT modify unrelated chats/lorebooks to make the package fit.
+- `Max Recursion Steps = 1`
+- `Alert on overflow = ON`
+
+These are intentional global baseline changes, not RP-local emulation.
+
+If the runtime currently has `Max Recursion Steps = 0` and/or `Alert on overflow = OFF`, that is **NOT a blocker**. Luna is authorized to change those exact settings to `1` and `ON` respectively.
+
+After applying them:
+
+- verify both values;
+- leave them at `1` / `ON` after the task;
+- do not revert them;
+- do not change any other global World Info setting unless a separate package instruction explicitly authorizes it.
+
+A mismatch in any *other* global World Info setting must not be “fixed” by inference.
 
 ## Memory
 
@@ -194,6 +208,7 @@ Luna must preserve:
 - presets/configs not owned by this RP;
 - shared base preset `Default`;
 - unrelated lorebooks;
+- every global World Info setting except the two explicitly authorized above;
 - Summaryception, Presence and Recast unless explicitly authorized;
 - Gallery Images implementation/settings/data;
 - SillyTavern core;
@@ -213,6 +228,9 @@ Verify at least:
 - RP-specific preset `Lafiel & Almion` exists;
 - `Main Prompt`, `Auxiliary Prompt` and `Post-History Instructions` match `PRESET_PROMPTS.md` exactly;
 - dynamic World Info/card/scenario/examples/history slots remain dynamic and do not contain duplicated RP prompt prose;
+- global `Max Recursion Steps` is exactly `1`;
+- global `Alert on overflow` is `ON`;
+- no other global World Info setting changed because of this package;
 - the effective RP-specific preset/config contains no foreign RP prompt or inherited instructions;
 - lorebook identity is exactly `Lafiel-Almion — World`;
 - World Info entries/keys/strategies/orders/content match `WORLD_INFO.md`;
@@ -250,7 +268,8 @@ Do not downgrade `rp_architect_status: READY` because of that technical blocker.
 STOP if:
 
 - any required capability is not `LUNA_READY` for the requested operation;
-- any RP-required global World Info setting differs from the existing runtime value;
+- changing `Max Recursion Steps` to `1` or `Alert on overflow` to `ON` would require an undocumented/unsafe operation;
+- any additional global World Info setting would need to be changed;
 - it needs to decide how to reinterpret semantic content between surfaces;
 - it cannot create/bind the exact World Info configuration without an authorized procedure;
 - it cannot create the RP-specific preset from `Default` without modifying the shared base;
