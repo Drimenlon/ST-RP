@@ -5,6 +5,7 @@ status: DRAFT_NOT_READY
 rp_id: lafiel-almion
 rp_name: Lafiel & Almion
 group_name: Lafiel & Almion
+user_role: narrator_director
 ```
 
 ## Purpose
@@ -18,88 +19,149 @@ La dinámica principal es cuckolding psicológico, humillación aristocrática, 
 Luna debe leer los archivos de este paquete en este orden:
 
 1. `README.md` — manifest, mapping y gates de ejecución.
-2. `WORLD.md` — canon persistente del mundo relevante para este RP.
-3. `NARRATIVE_RULES.md` — reglas globales de narración y comportamiento.
-4. `LAFIEL.md` — definición operativa de la card de Lafiel.
-5. `ALMION.md` — definición operativa de la card de Almion.
-6. `GROUP.md` — participantes, rol de {{user}}, escenario compartido y knowledge boundaries.
-7. `OPENING.md` — saludo/opening grupal exacto.
+2. `WORLD.md` — canon persistente/prosa de referencia del mundo.
+3. `WORLD_INFO.md` — especificación exacta de lorebook/World Info: entries, keys, strategy, position, order y contenido.
+4. `NARRATIVE_RULES.md` — reglas globales de narración, pacing y comportamiento.
+5. `LAFIEL.md` — definición operativa de la card de Lafiel.
+6. `ALMION.md` — definición operativa de la card de Almion.
+7. `GROUP.md` — participantes, narrator role, NPC de prueba, escenario compartido y knowledge boundaries.
+8. `OPENING.md` — opening grupal exacto y handoff al narrador.
 
 No inferir contenido desde otros archivos del repositorio salvo los contratos globales de infraestructura.
+
+## Critical user-role rule
+
+`{{user}}` is the narrator/director.
+
+`{{user}}` is NOT Rhevan, NOT a servant, and NOT an in-world participant by default.
+
+User messages can establish narration, scene direction, time progression, environmental facts, and dialogue/actions explicitly attributed to supporting NPCs.
+
+Lafiel and Almion must not address `{{user}}` as a diegetic person unless the narrator explicitly introduces a separate in-world character.
+
+The initial lower-class male pressure point is the supporting NPC `Rhevan`, defined in `GROUP.md`. Rhevan is not Dalkon.
 
 ## Mapping hacia SillyTavern
 
 - `LAFIEL.md` → Character Card `Lafiel`.
 - `ALMION.md` → Character Card `Almion`.
-- `WORLD.md` → fuente semántica para World Info/Lorebook de este RP. La representación técnica exacta debe seguir únicamente un mapping/runbook validado.
+- `WORLD.md` → semantic canon reference; do not dump this file wholesale into a card.
+- `WORLD_INFO.md` → desired Chat Lorebook `Lafiel-Almion — World`, with exact entry decomposition and activation semantics.
 - `NARRATIVE_RULES.md` → requisitos del prompt global/preset del RP; no duplicar innecesariamente dentro de las cards.
-- `GROUP.md` → definición del Group Chat `Lafiel & Almion`, escenario compartido y rol de {{user}}.
-- `OPENING.md` → greeting inicial del grupo.
+- `GROUP.md` → definición del Group Chat `Lafiel & Almion`, scenario compartido, narrator semantics, supporting NPC and knowledge boundaries.
+- `OPENING.md` → greeting/opening inicial del grupo.
+
+If Luna lacks an approved runbook for any exact creation/binding operation described here, it must STOP on that capability rather than invent another representation.
 
 ## Required characters
 
 - Lafiel
 - Almion
 
-No crear una card para Dalkon en este RP.
+Do not create a Dalkon card for this pilot.
 
-El personaje de clase baja interpretado por `{{user}}` NO es Dalkon y no debe recibir automáticamente historia, reputación o capacidades de Dalkon.
+Rhevan is initially a narrator-controlled supporting NPC, not a required group-member card. Do not create a Rhevan character card unless RP Architect later changes that decision.
+
+## Group generation
+
+Desired group participants:
+
+1. Lafiel
+2. Almion
+
+The narrator controls scene progression through user turns.
+
+Do not treat every user turn as spoken dialogue. Read attribution literally:
+
+- `Rhevan says ...` → Rhevan spoke.
+- `Almion notices ...` → narrator establishes an observable/scene fact as written.
+- descriptive prose → narration, not a narrator-character action.
+
+## World Info
+
+The implementation source is `WORLD_INFO.md`, not generic category names.
+
+The desired lorebook contains explicit entries for:
+
+- hereditary estate order;
+- modern prosperity/technology;
+- settlement pattern;
+- modern nobility;
+- curse core/public knowledge;
+- curse effects on noble men;
+- curse effects on noble women;
+- public hierarchy vs private inversion;
+- servant boundaries/consequences;
+- Crown/succession/Lafiel;
+- current curse research state.
+
+Do not merge these into one generic "world" entry unless RP Architect explicitly authorizes that simplification.
+
+Do not invent extra keys, random activation, vectors, timed effects, inclusion groups or Author's Note usage.
 
 ## Memory
 
-El RP inicial no depende de Memory Books.
+The RP initial test does not depend on Memory Books.
 
-Mientras Memory Books siga `LUNA_READY = NO`, Luna no debe configurarlo para este paquete.
+While Memory Books remains `LUNA_READY = NO`, Luna must not configure it for this package.
+
+Summaryception coexistence/replacement is outside this package.
 
 ## Presence / group isolation
 
-Este paquete puede usar group chat normal, pero no debe depender de comportamiento Memory Books + Presence todavía no validado.
+This package can use normal group chat but does not depend on unvalidated Memory Books + Presence behavior.
 
-No inferir conocimiento privado entre personajes fuera de lo explícitamente definido en `GROUP.md`.
+Private character thoughts must not become shared knowledge merely because Lafiel and Almion are in the same group chat.
 
 ## Preset gate
 
-El RP requiere un preset/config explícitamente ligado a este grupo.
+The RP requires an explicitly identified RP-specific preset/configuration bound to this group.
 
-La identidad técnica exacta del preset y su binding todavía están pendientes.
+The exact preset identity and binding are still unresolved.
 
-Por tanto el paquete permanece:
+Therefore the package remains:
 
 `DRAFT_NOT_READY`
 
-No ejecutar todavía en SillyTavern hasta que ese binding quede cerrado y el README pase a `status: READY`.
+Do not implement in SillyTavern until the preset binding is closed and the package is explicitly promoted to `status: READY`.
 
 ## Preserve
 
-Luna debe preservar:
+Luna must preserve:
 
-- otros RPs, cards, groups y chats;
-- presets/configs no pertenecientes a este RP;
-- lorebooks ajenos;
-- Summaryception, Presence y Recast salvo autorización explícita;
-- Gallery Images y su configuración/datos;
-- SillyTavern core.
+- other RPs, cards, groups and chats;
+- presets/configs not owned by this RP;
+- unrelated lorebooks;
+- Summaryception, Presence and Recast unless explicitly authorized;
+- Gallery Images implementation/settings/data;
+- SillyTavern core;
+- Author's Note, which is user-controlled and out of scope.
 
 ## Verify when READY
 
-Tras implementación deberá comprobarse al menos:
+After implementation verify at least:
 
-- existen exactamente las cards Lafiel y Almion con los campos suministrados;
-- existe el grupo `Lafiel & Almion` con ambos participantes;
-- el greeting coincide con `OPENING.md`;
-- el preset correcto está ligado al RP y no hereda instrucciones de otro RP;
-- el contexto construido contiene únicamente el canon/reglas esperados para este RP;
-- no aparece Dalkon como participante ni como conocimiento implícito;
-- no se modifica ningún RP ajeno.
+- exactly the intended Lafiel and Almion cards exist with supplied fields;
+- the group `Lafiel & Almion` has only the intended required character participants;
+- `{{user}}` is represented semantically as narrator/director, not servant;
+- the opening matches `OPENING.md`;
+- the intended preset is bound and no foreign RP prompt is inherited;
+- lorebook identity is exactly `Lafiel-Almion — World`;
+- World Info entries/keys/strategies/orders/content match `WORLD_INFO.md`;
+- WorldInfo Info activation behavior matches the verification cases in `WORLD_INFO.md`;
+- Prompt Inspector shows the expected world/character/narrative context and no foreign RP instructions;
+- Dalkon is not a participant and is not implicitly substituted for Rhevan;
+- no unrelated RP is modified.
 
 ## STOP IF
 
-Luna debe STOP si:
+Luna must STOP if:
 
-- el preset/binding sigue sin resolver;
-- alguna capability requerida no es `LUNA_READY`;
-- necesita decidir cómo repartir semánticamente información entre superficies;
-- encuentra otra versión de Lafiel/Almion y no está explícitamente autorizada a actualizarla;
-- detecta instrucciones de otro RP en el contexto;
-- necesita modificar SillyTavern core o una extensión protegida;
-- cualquier archivo del manifest falta o se contradice materialmente con otro.
+- preset/binding remains unresolved;
+- any required capability is not `LUNA_READY` for the requested operation;
+- it needs to decide how to reinterpret semantic content between surfaces;
+- it cannot create/bind the exact World Info configuration without an undocumented procedure;
+- it finds another Lafiel/Almion and is not explicitly authorized to update it;
+- it detects instructions from another RP in context;
+- it would need to modify SillyTavern core or a protected extension;
+- any manifest file is missing or materially contradictory.
