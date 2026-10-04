@@ -1,32 +1,32 @@
-# RP Luna Execution Contract
+# Contrato de ejecución de RP para Luna
 
 ## Roles
 
-- **Sol** closes meaning, architecture, ownership, and operational procedures; it decides whether a capability is ready.
-- **Luna** applies a complete, approved `READY RP SPEC` mechanically. It does not invent narrative meaning, schemas, compatibility fixes, or competing strategies.
-- **Codex Local** performs only the explicitly authorized local filesystem or SillyTavern actions.
+- **Sol** cierra significado, arquitectura, ownership y procedimientos operativos; decide si una capability está lista.
+- **Luna** aplica mecánicamente una `READY RP SPEC` completa y aprobada. No inventa significado narrativo, schemas, arreglos de compatibilidad ni estrategias alternativas.
+- **Codex Local** realiza únicamente las acciones locales de filesystem o SillyTavern autorizadas explícitamente.
 
-## Execution gate
+## Gate de ejecución
 
-Luna may proceed only when the RP spec is complete and unambiguous, the required capability is marked `LUNA_READY = YES`, the target and allowed changes are explicit, and preservation and verification checks are defined. First inspect the current runtime and the named source-of-truth documents.
+Luna solo puede continuar cuando la especificación del RP sea completa e inequívoca, la capability requerida esté marcada `LUNA_READY = YES`, el objetivo y los cambios permitidos sean explícitos y estén definidas las comprobaciones de preservación y verificación. Primero debe inspeccionar el runtime actual y los documentos nombrados como source of truth.
 
-If runtime state conflicts with the spec or runbook, **STOP**. Documentation does not authorize silently changing the host to make it fit.
+Si el estado del runtime entra en conflicto con la especificación o el runbook, **STOP**. La documentación no autoriza a cambiar silenciosamente el host para hacerlo encajar.
 
-## Current host
+## Host actual
 
 - SillyTavern **1.19.0 stable — ADOPTED**.
-- Do not upgrade, reinstall, or otherwise modify SillyTavern core as part of ordinary RP execution.
+- No actualizar, reinstalar ni modificar de otra forma el core de SillyTavern como parte de una ejecución ordinaria de RP.
 
-## Protected surfaces and preservation
+## Superficies protegidas y preservación
 
-Preserve unrelated RP data, characters/cards, chats, presets, lorebooks, and extension configuration. Never change another RP's state to satisfy the current spec. SillyTavern core and the existing **Gallery Images** extension are protected; Gallery owns its search and media behavior. Touch only surfaces explicitly listed under `MODIFY` in an authorized spec. Do not read, copy, or log secrets.
+Preservar datos de RP no relacionados, personajes/fichas, chats, presets, lorebooks y configuración de extensiones. Nunca cambiar el estado de otro RP para satisfacer la especificación actual. El core de SillyTavern y la extensión existente **Gallery Images** están protegidos; Gallery es propietaria de su comportamiento de búsqueda y media. Tocar únicamente superficies enumeradas explícitamente bajo `MODIFY` en una especificación autorizada. No leer, copiar ni registrar secretos.
 
-No deletion, overwrite, migration, or other destructive action unless the spec explicitly names the exact target and a safe recovery plan. If an unexpected destructive step is needed, STOP for approval.
+No realizar borrado, sobrescritura, migración ni ninguna otra acción destructiva salvo que la especificación nombre explícitamente el objetivo exacto y un plan seguro de recuperación. Si aparece un paso destructivo inesperado, hacer STOP para solicitar aprobación.
 
-## Mandatory STOP conditions
+## Condiciones obligatorias de STOP
 
-STOP and return to Sol/user if any required field is missing; intent or ownership is ambiguous; runtime differs from the runbook; another RP's data appears in scope; an unapproved surface would change; a capability is not `LUNA_READY`; a compatibility workaround would be needed; or an unexpected destructive action is required. Do not improvise a fix.
+Hacer STOP y devolver la tarea a Sol/usuario si falta algún campo requerido; la intención u ownership son ambiguos; el runtime difiere del runbook; aparecen datos de otro RP dentro del alcance; cambiaría una superficie no aprobada; una capability no está `LUNA_READY`; sería necesario un workaround de compatibilidad; o se requiere una acción destructiva inesperada. No improvisar una solución.
 
-## Readiness declaration
+## Declaración de readiness
 
-Every capability must state `LUNA_READY = YES` or `LUNA_READY = NO`, with scope. **YES applies only to the documented workflow**, not every possible use of that tool. Missing or uncertain status means **NO**.
+Cada capability debe indicar `LUNA_READY = YES` o `LUNA_READY = NO`, junto con su alcance. **YES se aplica únicamente al workflow documentado**, no a todos los usos posibles de esa herramienta. Un estado ausente o incierto significa **NO**.
