@@ -8,7 +8,8 @@ rp_name: Lafiel & Almion
 group_name: Lafiel & Almion
 user_role: narrator_director
 preset_api_family: openai
-preset_base: GLM 5.3 Flash
+preset_base: Default
+preset_name: Lafiel & Almion
 ```
 
 ## Purpose
@@ -69,7 +70,7 @@ The initial lower-class male pressure point is the supporting NPC `Rhevan`, defi
 - `ALMION.md` → Character Card `Almion`.
 - `WORLD.md` → semantic canon reference; do not dump this file wholesale into a card.
 - `WORLD_INFO.md` → desired Chat Lorebook `Lafiel-Almion — World`, with exact entry decomposition and activation semantics.
-- `NARRATIVE_RULES.md` → requisitos semánticos del comportamiento global/preset del RP; no duplicar innecesariamente dentro de las cards.
+- `NARRATIVE_RULES.md` → requisitos semánticos del comportamiento global/preset del RP; deben materializarse en el preset RP-specific `Lafiel & Almion`, no en el preset base compartido.
 - `GROUP.md` → definición del Group Chat `Lafiel & Almion`, scenario compartido, narrator semantics, supporting NPC and knowledge boundaries.
 - `OPENING.md` → greeting/opening inicial del grupo.
 
@@ -150,21 +151,25 @@ Private character thoughts must not become shared knowledge merely because Lafie
 
 ## Preset / configuration binding
 
-The preset binding data required by the materialization layer is explicit and closed:
+The preset materialization data required by the materialization layer is explicit and closed:
 
 ```yaml
 preset_api_family: openai
-preset_base: GLM 5.3 Flash
+preset_base: Default
+preset_name: Lafiel & Almion
 ```
 
 Interpretation:
 
 - API/preset family: SillyTavern OpenAI preset family.
-- Exact base preset: `GLM 5.3 Flash`.
-- The base preset is the starting technical substrate for the RP-specific narrative configuration; it is not permission to inherit another RP's currently selected preset.
-- `NARRATIVE_RULES.md` remains the authoritative RP-specific narrative behavior to be materialized according to the approved preset/narrative prompt runbook.
-- Do not infer the provider/preset from current runtime state.
-- Do not substitute another base preset because it happens to be selected.
+- Exact shared base preset: `Default`.
+- Luna must create a new RP-specific preset named exactly `Lafiel & Almion`, matching the Group Chat name.
+- The new preset must be created from/copy the base preset `Default` according to the approved preset materialization runbook.
+- `Default` is a source/base only. Do NOT modify the shared `Default` preset in place.
+- `NARRATIVE_RULES.md` remains the authoritative RP-specific narrative behavior and must be materialized into the new `Lafiel & Almion` preset according to the approved runbook.
+- Bind/use the new `Lafiel & Almion` preset for this RP/group according to the approved runbook.
+- Do not infer the provider or model from the preset name. Connection profile/provider/model are separate runtime concerns.
+- Do not substitute the currently selected preset or any other preset merely because it is active in the runtime.
 
 With these values supplied, the package is complete for the basic materialization layer and may return to Luna.
 
@@ -192,7 +197,9 @@ Verify at least:
 - the group `Lafiel & Almion` has only the intended required character participants;
 - `{{user}}` is represented semantically as narrator/director, not servant;
 - the opening matches `OPENING.md`;
-- preset family is `openai` and the exact base used is `GLM 5.3 Flash`;
+- preset family is `openai`;
+- exact base preset used to create the RP preset is `Default`;
+- RP-specific preset `Lafiel & Almion` exists and contains the intended RP narrative configuration;
 - the effective RP-specific preset/config contains no foreign RP prompt or inherited instructions;
 - lorebook identity is exactly `Lafiel-Almion — World`;
 - World Info entries/keys/strategies/orders/content match `WORLD_INFO.md`;
