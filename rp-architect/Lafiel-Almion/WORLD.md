@@ -1,94 +1,94 @@
-# WORLD — Lafiel & Almion
+# MUNDO — Lafiel & Almion
 
-## Social order
+## Orden social
 
-The world preserves a hereditary estate system with extreme rigidity. Nobility, clergy and lower classes remain distinct social categories. Social mobility is exceptional to the point of being almost nonexistent.
+El mundo conserva un sistema de estamentos hereditarios extremadamente rígido. La nobleza, el clero y las clases bajas siguen siendo categorías sociales distintas. La movilidad social es excepcional hasta el punto de ser casi inexistente.
 
-A person born a servant normally remains a servant. A person born noble normally remains noble.
+Una persona nacida sirviente normalmente sigue siendo sirviente. Una persona nacida noble normalmente sigue siendo noble.
 
-This is not a society on the verge of revolution. The estate system is treated by most people as the normal structure of civilization.
+Esta no es una sociedad al borde de una revolución. La mayoría de la población considera el sistema estamental como la estructura normal de la civilización.
 
-## Material conditions
+## Condiciones materiales
 
-The society is technologically modern and extremely prosperous.
+La sociedad es tecnológicamente moderna y extremadamente próspera.
 
-It has electricity, modern medicine, communications, transport, domestic appliances, excellent services and very high material living standards.
+Dispone de electricidad, medicina moderna, comunicaciones, transporte, electrodomésticos, servicios excelentes y niveles de vida material muy altos.
 
-Even lower-class people generally enjoy security and comfort compared with real-world historical peasants or servants.
+Incluso las personas de clase baja disfrutan por lo general de seguridad y comodidad en comparación con campesinos o sirvientes históricos del mundo real.
 
-Status inequality remains extreme despite high material prosperity.
+La desigualdad de estatus sigue siendo extrema a pesar de la elevada prosperidad material.
 
-## Settlement character
+## Carácter de los asentamientos
 
-The world should avoid generic modern megacity aesthetics.
+El mundo debe evitar una estética genérica de megaciudad moderna.
 
-Settlements preserve the social and visual character of villages, towns, estates, palaces and smaller cities, adapted to modern technology and larger populations.
+Los asentamientos conservan el carácter social y visual de aldeas, pueblos, propiedades nobiliarias, palacios y ciudades pequeñas, adaptado a la tecnología moderna y a poblaciones mayores.
 
-## Nobility
+## Nobleza
 
-Ancient nobility was more martial, aggressive and warlike.
+La nobleza antigua era más marcial, agresiva y guerrera.
 
-Over generations, a mysterious hereditary phenomenon known publicly as the curse transformed the upper estates into a more intellectual and administrative ruling caste.
+A lo largo de las generaciones, un misterioso fenómeno hereditario conocido públicamente como la maldición transformó a los estamentos superiores en una casta dirigente más intelectual y administrativa.
 
-Modern nobles are often:
+Los nobles modernos suelen ser:
 
-- highly educated;
-- sophisticated;
-- strategically capable;
-- verbally skilled;
-- competent administrators;
-- proud;
-- class-conscious;
-- deeply attached to hereditary hierarchy.
+- muy educados;
+- sofisticados;
+- estratégicamente capaces;
+- hábiles con las palabras;
+- administradores competentes;
+- orgullosos;
+- muy conscientes de su clase;
+- profundamente apegados a la jerarquía hereditaria.
 
-The curse did not produce equality and did not remove aristocratic arrogance.
+La maldición no produjo igualdad ni eliminó la arrogancia aristocrática.
 
-## The curse
+## La maldición
 
-The existence and broad effects of the curse are common knowledge.
+La existencia y los efectos generales de la maldición son de conocimiento común.
 
-Its true origin, purpose and mechanism remain unknown.
+Su verdadero origen, propósito y mecanismo siguen siendo desconocidos.
 
-Possible explanations exist in-world, but none is canonical truth yet. It may have been caused by a god, demon, angel, other entity, experiment, punishment, blessing, amusement or something incomprehensible.
+Existen posibles explicaciones dentro del mundo, pero ninguna es todavía verdad canónica. Podría haber sido causada por un dios, un demonio, un ángel, otra entidad, un experimento, un castigo, una bendición, diversión o algo incomprensible.
 
-Do not establish a final answer unless RP Architect later defines one.
+No establezcas una respuesta definitiva salvo que RP Architect la defina más adelante.
 
-### Noble men
+### Hombres nobles
 
-Male nobles possess a strong inherited vulnerability toward class-inverted humiliation and cuckolding dynamics involving lower-class men.
+Los hombres nobles poseen una fuerte vulnerabilidad hereditaria hacia dinámicas de humillación con inversión de clase y cuckolding que implican a hombres de clase baja.
 
-This does not erase personality, pride, jealousy, anger, authority or free will.
+Esto no borra su personalidad, orgullo, celos, ira, autoridad ni libre albedrío.
 
-A noble man can genuinely resent a situation while also experiencing an unwanted or embarrassing response to it.
+Un noble puede resentir sinceramente una situación y al mismo tiempo experimentar una respuesta involuntaria o embarazosa ante ella.
 
-### Noble women
+### Mujeres nobles
 
-Noble women possess a strong inherited attraction toward lower-class men and a heightened vulnerability to class-inverted erotic humiliation.
+Las mujeres nobles poseen una fuerte atracción hereditaria hacia hombres de clase baja y una vulnerabilidad aumentada a la humillación erótica con inversión de clase.
 
-This does not make every noble woman instantly obedient or submissive.
+Esto no convierte a toda mujer noble en obediente o sumisa de forma instantánea.
 
-Attraction does not equal trust, love, obedience or surrender.
+Atracción no equivale a confianza, amor, obediencia ni rendición.
 
-## Public hierarchy vs private inversion
+## Jerarquía pública frente a inversión privada
 
-Formal hierarchy remains real.
+La jerarquía formal sigue siendo real.
 
-A servant can still be ordered, disciplined, dismissed or punished by nobles.
+Un sirviente todavía puede recibir órdenes, ser disciplinado, despedido o castigado por nobles.
 
-At the same time, private situations may produce sharp inversions of dignity, desire and psychological power.
+Al mismo tiempo, las situaciones privadas pueden producir fuertes inversiones de dignidad, deseo y poder psicológico.
 
-The same people can occupy very different public and private roles without society treating this as evidence that the estate system has disappeared.
+Las mismas personas pueden ocupar papeles públicos y privados muy distintos sin que la sociedad interprete eso como una desaparición del sistema estamental.
 
-## Social knowledge
+## Conocimiento social
 
-Everyone broadly knows the curse exists.
+Todo el mundo sabe en términos generales que la maldición existe.
 
-Specific incidents, private desires and personal vulnerabilities are not automatically public knowledge.
+Los incidentes concretos, deseos privados y vulnerabilidades personales no son conocimiento público de forma automática.
 
-Nobles often preserve etiquette, appearances and plausible deniability even when all involved understand the broader phenomenon.
+Los nobles suelen preservar la etiqueta, las apariencias y una negación plausible incluso cuando todos los implicados comprenden el fenómeno general.
 
-## Political constraint
+## Restricción política
 
-This RP is not about democratization, socialism, revolution, servant liberation or moral reform of the class system.
+Este RP no trata sobre democratización, socialismo, revolución, liberación de los sirvientes ni reforma moral del sistema de clases.
 
-Characters may dislike individuals, exploit hierarchy or resent their own position, but the story does not automatically convert those feelings into revolutionary ideology.
+Los personajes pueden detestar a individuos, explotar la jerarquía o resentir su propia posición, pero la historia no convierte automáticamente esos sentimientos en ideología revolucionaria.
