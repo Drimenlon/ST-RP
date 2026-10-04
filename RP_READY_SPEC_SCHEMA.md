@@ -1,60 +1,60 @@
-# READY RP Spec Schema
+# Schema de especificación READY de RP
 
-RP Architect supplies this minimum contract before Luna changes SillyTavern. Use `NOT APPLICABLE` only where the spec explains why; do not leave required decisions implicit.
+RP Architect suministra este contrato mínimo antes de que Luna cambie SillyTavern. Usar `NOT APPLICABLE` únicamente cuando la especificación explique por qué; no dejar decisiones requeridas de forma implícita.
 
 ```yaml
 status: READY
-rp_id: <stable unique id>
-rp_name: <name>
+rp_id: <id único y estable>
+rp_name: <nombre>
 
 characters:
-  - identity: <exact card/name and how to identify it>
-    source: <provided card/source>
-    required_fields: <explicit fields and intended values/content>
-    greeting: <exact text, or NOT APPLICABLE>
+  - identity: <ficha/nombre exacto y cómo identificarlo>
+    source: <ficha/fuente proporcionada>
+    required_fields: <campos explícitos y valores/contenido previstos>
+    greeting: <texto exacto, o NOT APPLICABLE>
 
 preset:
-  identity: <exact intended preset name/id>
-  binding: <how this RP/chat must use it>
-  required_configuration: <explicit settings, or none>
+  identity: <nombre/id exacto del preset previsto>
+  binding: <cómo debe usarlo este RP/chat>
+  required_configuration: <ajustes explícitos, o none>
 
 lorebooks_world_info:
-  books: <exact RP-owned books, or none>
-  entries: <provided content and required fields, or none>
-  bindings_activation_order: <explicit requirements, or none>
+  books: <libros exactos propiedad del RP, o none>
+  entries: <contenido suministrado y campos requeridos, o none>
+  bindings_activation_order: <requisitos explícitos, o none>
 
 memory:
-  provider: <provider, or none>
-  configuration: <explicit values, only if provider is LUNA_READY>
+  provider: <provider, o none>
+  configuration: <valores explícitos, solo si el provider está LUNA_READY>
 
 group:
-  participants: <exact character identities, or none>
-  presence_rules: <explicit supplied rules, or none>
+  participants: <identidades exactas de personajes, o none>
+  presence_rules: <reglas explícitas suministradas, o none>
 
 extensions:
-  settings: <only explicitly RP-owned settings; name capability and values>
+  settings: <solo ajustes explícitamente propiedad del RP; indicar capability y valores>
 
 preserve:
-  - unrelated RP data, characters, chats, presets, lorebooks, and extension settings
-  - SillyTavern core
-  - Gallery Images implementation and its data/behavior
+  - datos de RP, personajes, chats, presets, lorebooks y ajustes de extensiones no relacionados
+  - core de SillyTavern
+  - implementación de Gallery Images y sus datos/comportamiento
 
 verify:
-  - <objective post-change checks and expected results>
+  - <comprobaciones objetivas posteriores al cambio y resultados esperados>
 
 stop_if:
-  - <spec-specific ambiguity or mismatch>
+  - <ambigüedad o discrepancia específica de la especificación>
 ```
 
-## Required interpretation checks
+## Comprobaciones de interpretación requeridas
 
-- A new character or chat does **not** imply a clean prompt. Verify that the exact intended preset is bound; do not assume the currently selected preset belongs to this RP. Check for foreign RP instructions before generation or smoke testing. If the preset identity/binding or prompt ownership is unclear, STOP.
-- Lorebook content and bindings must be supplied or explicitly referenced by stable identity. Do not invent entries, activation rules, or ordering.
-- Configure memory only when that exact provider/workflow is `LUNA_READY = YES`. Do not infer coexistence or replacement rules between memory systems.
-- Group participants and any Presence behavior must be explicit. Do not infer Presence compatibility or group-memory isolation.
-- Extension changes are allowed only when the spec names the extension, exact owned setting, desired value, and validation. Never change unrelated/global configuration by assumption.
-- Gallery Images and SillyTavern core remain protected even if the RP asks for adjacent behavior; escalate for separate authorization.
+- Un personaje o chat nuevo **no** implica un prompt limpio. Verificar que está vinculado el preset exacto previsto; no asumir que el preset seleccionado actualmente pertenece a este RP. Comprobar si existen instrucciones de otros RP antes de cualquier generación o smoke test. Si la identidad/binding del preset o el ownership del prompt no están claros, STOP.
+- El contenido y los bindings de lorebook deben suministrarse o referenciarse explícitamente mediante identidad estable. No inventar entradas, reglas de activación ni orden.
+- Configurar memoria solo cuando ese provider/workflow exacto tenga `LUNA_READY = YES`. No inferir reglas de coexistencia o sustitución entre sistemas de memoria.
+- Los participantes del grupo y cualquier comportamiento de Presence deben ser explícitos. No inferir compatibilidad de Presence ni aislamiento de memoria grupal.
+- Los cambios de extensiones solo están permitidos cuando la especificación nombre la extensión, el ajuste exacto bajo ownership del RP, el valor deseado y la validación. Nunca cambiar configuración global/no relacionada por suposición.
+- Gallery Images y el core de SillyTavern permanecen protegidos incluso si el RP solicita comportamiento adyacente; escalar para una autorización separada.
 
-## Readiness question
+## Pregunta de readiness
 
-Before acting, Luna must be able to answer: **“Can I implement this literally without deciding what the author meant?”** If not, or if any required binding/value is unresolved, the spec is not READY: STOP and return it for clarification.
+Antes de actuar, Luna debe poder responder: **«¿Puedo implementar esto literalmente sin decidir qué quiso decir el autor?»** Si no puede, o si queda sin resolver algún binding/valor requerido, la especificación no está READY: STOP y devolverla para aclaración.
