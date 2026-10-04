@@ -1,52 +1,52 @@
-# WORLD INFO SPEC — Lafiel & Almion
+# ESPECIFICACIÓN DE WORLD INFO — Lafiel & Almion
 
-This file defines the exact desired World Info/Lorebook content for the pilot.
+Este archivo define el contenido exacto deseado de World Info/Lorebook para el piloto.
 
-`WORLD.md` remains the prose canon reference. This file is the implementation-oriented decomposition Luna must consume.
+`WORLD.md` sigue siendo la referencia en prosa del canon. Este archivo es la descomposición orientada a implementación que debe consumir Luna.
 
-## Lorebook identity
+## Identidad del lorebook
 
-Name:
+Nombre:
 
 `Lafiel-Almion — World`
 
-Desired scope:
+Ámbito deseado:
 
-`Chat Lorebook` for the group chat `Lafiel & Almion`.
+`Chat Lorebook` para el chat grupal `Lafiel & Almion`.
 
-Do not add this lorebook globally.
+No añadir este lorebook globalmente.
 
-Do not bind it to unrelated characters or chats.
+No vincularlo a personajes o chats no relacionados.
 
-If the current Luna runbooks do not authorize creation/binding of this exact World Info configuration, STOP and return only that missing capability to Infrastructure/Sol.
+Si los runbooks actuales de Luna no autorizan la creación/vinculación de esta configuración exacta de World Info, STOP y devolver únicamente esa capability ausente a Infrastructure/Sol.
 
-## Activation settings
+## Configuración de activación
 
-### Authorized global World Info changes
+### Cambios globales de World Info autorizados
 
-This package explicitly authorizes Luna to change exactly two SillyTavern **global** World Info settings as part of this RP materialization:
+Este paquete autoriza explícitamente a Luna a cambiar exactamente dos ajustes **globales** de World Info de SillyTavern como parte de la materialización de este RP:
 
 - `Max Recursion Steps = 1`
 - `Alert on overflow = ON`
 
-This authorization is deliberate and global. Luna must not treat the current runtime values (`0` / `OFF`) as a blocker. If they differ, Luna is authorized to change them to the values above.
+Esta autorización es deliberada y global. Luna no debe tratar los valores actuales del runtime (`0` / `OFF`) como un bloqueo. Si difieren, Luna está autorizada a cambiarlos a los valores anteriores.
 
-These two values become the intended global World Info baseline after materialization; do not revert them at the end of the task.
+Estos dos valores pasan a ser la baseline global deseada de World Info tras la materialización; no revertirlos al terminar la tarea.
 
-No other global World Info setting is owned or authorized for change by this package. Preserve the runtime's existing values for all other global World Info settings, including:
+Este paquete no controla ni autoriza el cambio de ningún otro ajuste global de World Info. Preservar los valores existentes del runtime para todos los demás ajustes globales, incluidos:
 
 - Include Names;
 - Case-sensitive keys;
 - Match whole words;
-- global Context/Budget;
+- Context/Budget global;
 - Min Activations;
-- any other global World Info option not explicitly listed above.
+- cualquier otra opción global de World Info no enumerada explícitamente arriba.
 
-Luna must verify the two authorized changes after applying them and must STOP rather than altering any additional global World Info setting to make this RP work.
+Luna debe verificar los dos cambios autorizados después de aplicarlos y debe hacer STOP en lugar de alterar cualquier otro ajuste global de World Info para hacer funcionar este RP.
 
-### Entry-level defaults
+### Valores por defecto de las entradas
 
-Unless an entry says otherwise:
+Salvo que una entrada indique lo contrario:
 
 - Enabled: `YES`
 - Position: `Before Char Defs`
@@ -56,18 +56,20 @@ Unless an entry says otherwise:
 - Prevent further recursion: `NO`
 - Ignore budget: `NO`
 - Inclusion Group: `NONE`
-- Character filter: `NONE` (scope is already restricted by Chat Lorebook binding)
-- Additional Matching Sources: all `OFF`
+- Character filter: `NONE` (el ámbito ya está restringido por el binding del Chat Lorebook)
+- Additional Matching Sources: todos `OFF`
+
+Las entradas SELECTIVE usan claves bilingües español + inglés. El español es el idioma principal del RP; las claves inglesas se conservan como compatibilidad adicional. No traducir semánticamente las claves en runtime: SillyTavern debe hacer matching literal según su configuración global existente.
 
 ---
 
-## ENTRY 001 — Estate system
+## ENTRADA 001 — Sistema estamental
 
-Title / Memo:
+Título / Memo:
 
-`World — Hereditary Estate System`
+`Mundo — Sistema estamental hereditario`
 
-Strategy:
+Estrategia:
 
 `CONSTANT` / Blue Circle
 
@@ -79,21 +81,21 @@ Order:
 
 `100`
 
-Content:
+Contenido:
 
 ```text
-This society is organized into rigid hereditary estates: Crown/royal family, nobility, clergy, and lower classes including servants. Social mobility is extraordinarily rare. A person born a servant normally remains lower-class for life; a person born noble normally remains noble for life. The hierarchy is treated by most inhabitants as the normal structure of civilization, not as a temporary injustice awaiting revolution. Lower-class material comfort does not imply social equality, and private sexual inversions do not abolish formal rank.
+Esta sociedad está organizada en estamentos hereditarios rígidos: Corona/familia real, nobleza, clero y clases bajas, incluidos los sirvientes. La movilidad social es extraordinariamente rara. Una persona nacida sirviente normalmente permanece en la clase baja durante toda su vida; una persona nacida noble normalmente sigue siendo noble de por vida. La mayoría de los habitantes trata la jerarquía como la estructura normal de la civilización, no como una injusticia temporal a la espera de una revolución. La comodidad material de las clases bajas no implica igualdad social y las inversiones sexuales privadas no anulan el rango formal.
 ```
 
 ---
 
-## ENTRY 002 — Prosperity and modern technology
+## ENTRADA 002 — Prosperidad y tecnología moderna
 
-Title / Memo:
+Título / Memo:
 
-`World — Modern Prosperity`
+`Mundo — Prosperidad moderna`
 
-Strategy:
+Estrategia:
 
 `CONSTANT` / Blue Circle
 
@@ -105,27 +107,27 @@ Order:
 
 `110`
 
-Content:
+Contenido:
 
 ```text
-The world is technologically modern and extremely prosperous despite its hereditary hierarchy. Electricity, internet, smartphones, modern transport, domestic appliances, automation, excellent medicine, strong public services, housing security and a universal basic income exist. Serious disease is rare and even servants generally enjoy high material living standards. Economic and status inequality remain large: noble households, estates and political authority can still dwarf those of lower-class people.
+El mundo es tecnológicamente moderno y extremadamente próspero a pesar de su jerarquía hereditaria. Existen electricidad, internet, smartphones, transporte moderno, electrodomésticos, automatización, medicina excelente, servicios públicos sólidos, seguridad de vivienda y una renta básica universal. Las enfermedades graves son raras e incluso los sirvientes disfrutan por lo general de un nivel de vida material alto. La desigualdad económica y de estatus sigue siendo grande: los hogares nobiliarios, propiedades y autoridad política pueden superar ampliamente a los de las personas de clase baja.
 ```
 
 ---
 
-## ENTRY 003 — Settlement scale and aesthetic
+## ENTRADA 003 — Escala y estética de los asentamientos
 
-Title / Memo:
+Título / Memo:
 
-`World — Settlement Pattern`
+`Mundo — Patrón de asentamientos`
 
-Strategy:
+Estrategia:
 
 `SELECTIVE` / Green Circle
 
 Primary Keys:
 
-`city, cities, town, towns, village, villages, capital, settlement, settlements, estate, estates, palace, travel, road, district`
+`city, cities, town, towns, village, villages, capital, settlement, settlements, estate, estates, palace, travel, road, district, ciudad, ciudades, pueblo, pueblos, aldea, aldeas, asentamiento, asentamientos, residencia, residencias, palacio, palacios, viaje, viajar, camino, caminos, carretera, carreteras, distrito, distritos`
 
 Optional Filter:
 
@@ -135,21 +137,21 @@ Order:
 
 `120`
 
-Content:
+Contenido:
 
 ```text
-Settlements preserve a medieval-like spatial and visual character while incorporating modern technology. The setting favors villages, towns, noble estates, palaces and small-to-midsized cities rather than giant modern megacities. Settlements may be somewhat larger than their historical medieval equivalents, but the social landscape should still feel decentralized, estate-centered and human-scale.
+Los asentamientos conservan un carácter espacial y visual semejante al medieval mientras incorporan tecnología moderna. El escenario favorece aldeas, pueblos, propiedades nobiliarias, palacios y ciudades pequeñas o medianas en lugar de megaciudades modernas gigantes. Los asentamientos pueden ser algo mayores que sus equivalentes medievales históricos, pero el paisaje social debe seguir sintiéndose descentralizado, centrado en propiedades y a escala humana.
 ```
 
 ---
 
-## ENTRY 004 — Modern nobility
+## ENTRADA 004 — Nobleza moderna
 
-Title / Memo:
+Título / Memo:
 
-`World — Modern Nobility`
+`Mundo — Nobleza moderna`
 
-Strategy:
+Estrategia:
 
 `CONSTANT` / Blue Circle
 
@@ -161,21 +163,21 @@ Order:
 
 `130`
 
-Content:
+Contenido:
 
 ```text
-Ancient nobles were more martial, aggressive and warlike. Across generations the hereditary curse coincided with the upper estates becoming a more intellectual and administrative ruling caste. Modern nobles are commonly highly educated, sophisticated, strategically capable, verbally skilled and competent administrators. They remain proud, class-conscious, hierarchical and often arrogant. The curse did not make them egalitarian; their competence and their classism coexist.
+Los nobles antiguos eran más marciales, agresivos y guerreros. A lo largo de las generaciones, la maldición hereditaria coincidió con la transformación de los estamentos superiores en una casta dirigente más intelectual y administrativa. Los nobles modernos suelen ser muy educados, sofisticados, estratégicamente capaces, hábiles con las palabras y administradores competentes. Siguen siendo orgullosos, conscientes de su clase, jerárquicos y a menudo arrogantes. La maldición no los volvió igualitarios; su competencia y su clasismo coexisten.
 ```
 
 ---
 
-## ENTRY 005 — Curse: public facts and unknown origin
+## ENTRADA 005 — Maldición: hechos públicos y origen desconocido
 
-Title / Memo:
+Título / Memo:
 
-`Curse — Core Public Knowledge`
+`Maldición — Conocimiento público esencial`
 
-Strategy:
+Estrategia:
 
 `CONSTANT` / Blue Circle
 
@@ -187,21 +189,21 @@ Order:
 
 `200`
 
-Content:
+Contenido:
 
 ```text
-The hereditary phenomenon called the curse and its broad sexual/psychological effects are common public knowledge. Its true creator, mechanism and purpose are unknown. In-world theories may invoke a god, demon, angel, experiment, punishment, blessing, amusement or incomprehensible motive, but none is confirmed canon. The curse does not erase free will or personality. It creates strong inherited predispositions that interact with existing pride, love, jealousy, ambition, judgment and self-control.
+El fenómeno hereditario llamado la maldición y sus efectos sexuales/psicológicos generales son de conocimiento público. Su verdadero creador, mecanismo y propósito son desconocidos. Las teorías dentro del mundo pueden invocar a un dios, demonio, ángel, experimento, castigo, bendición, diversión o motivo incomprensible, pero ninguna está confirmada como canon. La maldición no borra el libre albedrío ni la personalidad. Crea fuertes predisposiciones hereditarias que interactúan con el orgullo, amor, celos, ambición, criterio y autocontrol ya existentes.
 ```
 
 ---
 
-## ENTRY 006 — Curse: noble men
+## ENTRADA 006 — Maldición: hombres nobles
 
-Title / Memo:
+Título / Memo:
 
-`Curse — Noble Men`
+`Maldición — Hombres nobles`
 
-Strategy:
+Estrategia:
 
 `CONSTANT` / Blue Circle
 
@@ -213,21 +215,21 @@ Order:
 
 `210`
 
-Content:
+Contenido:
 
 ```text
-High-class men possess a strong inherited predisposition toward cuckolding, humiliation and erotic subordination involving lower-class men, often including their own servants. They can genuinely desire or enjoy these dynamics while remaining proud aristocrats who consciously consider the lower-class man socially inferior. Jealousy, anger, shame, arousal and attachment can coexist. A noble man's protest or threat may sometimes function as face-saving theater, but genuine boundaries also exist and must not be assumed away.
+Los hombres de clase alta poseen una fuerte predisposición hereditaria hacia el cuckolding, la humillación y la subordinación erótica con hombres de clase baja, a menudo incluidos sus propios sirvientes. Pueden desear o disfrutar genuinamente de estas dinámicas mientras siguen siendo aristócratas orgullosos que consideran conscientemente inferior al hombre de clase baja. Los celos, la ira, la vergüenza, la excitación y el apego pueden coexistir. La protesta o amenaza de un noble puede funcionar a veces como teatro para salvar las apariencias, pero también existen límites genuinos y no deben darse por inexistentes.
 ```
 
 ---
 
-## ENTRY 007 — Curse: noble women
+## ENTRADA 007 — Maldición: mujeres nobles
 
-Title / Memo:
+Título / Memo:
 
-`Curse — Noble Women`
+`Maldición — Mujeres nobles`
 
-Strategy:
+Estrategia:
 
 `CONSTANT` / Blue Circle
 
@@ -239,21 +241,21 @@ Order:
 
 `220`
 
-Content:
+Contenido:
 
 ```text
-High-class women possess a strong inherited sexual attraction toward lower-class men, especially qualities they perceive as rough, physically imposing, unrefined or socially beneath them. They also have a marked predisposition toward sexual submission to lower-class men and toward humiliating men of their own class within cuckolding dynamics. These predispositions do not create instant trust, love, obedience or total surrender. A disciplined noble woman can resist, retreat, negotiate, rationalize, become angry or preserve public authority while still feeling the attraction strongly.
+Las mujeres de clase alta poseen una fuerte atracción sexual hereditaria hacia hombres de clase baja, especialmente hacia cualidades que perciben como rudas, físicamente imponentes, poco refinadas o socialmente inferiores. También tienen una marcada predisposición hacia la sumisión sexual ante hombres de clase baja y hacia la humillación de hombres de su propia clase dentro de dinámicas de cuckolding. Estas predisposiciones no crean confianza, amor, obediencia ni rendición total de forma instantánea. Una mujer noble disciplinada puede resistir, retirarse, negociar, racionalizar, enfadarse o preservar su autoridad pública mientras sigue sintiendo intensamente la atracción.
 ```
 
 ---
 
-## ENTRY 008 — Public hierarchy and private inversion
+## ENTRADA 008 — Jerarquía pública e inversión privada
 
-Title / Memo:
+Título / Memo:
 
-`Society — Public Hierarchy / Private Inversion`
+`Sociedad — Jerarquía pública / Inversión privada`
 
-Strategy:
+Estrategia:
 
 `CONSTANT` / Blue Circle
 
@@ -265,27 +267,27 @@ Order:
 
 `230`
 
-Content:
+Contenido:
 
 ```text
-Formal hierarchy remains fully real even when the curse produces private inversions of dignity or erotic power. A servant may be ordered, disciplined, dismissed or punished by a noble and later participate in a private situation where that same noble seeks humiliation or subordination. Society does not interpret this contradiction as abolition of the estate system. Etiquette, appearances and face-saving behavior matter. Cuckolding is humiliating, not a noble status symbol.
+La jerarquía formal sigue siendo plenamente real incluso cuando la maldición produce inversiones privadas de dignidad o poder erótico. Un sirviente puede recibir órdenes, ser disciplinado, despedido o castigado por un noble y participar más tarde en una situación privada donde ese mismo noble busque humillación o subordinación. La sociedad no interpreta esta contradicción como abolición del sistema estamental. La etiqueta, las apariencias y la conducta para salvar la imagen importan. El cuckolding es humillante, no un símbolo de estatus nobiliario.
 ```
 
 ---
 
-## ENTRY 009 — Boundaries, punishment and servant skill
+## ENTRADA 009 — Límites, castigo y habilidad de los sirvientes
 
-Title / Memo:
+Título / Memo:
 
-`Society — Servant Boundaries and Consequences`
+`Sociedad — Límites y consecuencias para sirvientes`
 
-Strategy:
+Estrategia:
 
 `SELECTIVE` / Green Circle
 
 Primary Keys:
 
-`punish, punishment, discipline, disciplined, dismiss, dismissed, expel, expelled, execution, kill, killed, boundary, boundaries, threat, threaten, servant, servants`
+`punish, punishment, discipline, disciplined, dismiss, dismissed, expel, expelled, execution, kill, killed, boundary, boundaries, threat, threaten, servant, servants, castigar, castigo, castigos, castigado, castigada, disciplina, disciplinar, disciplinado, disciplinada, despedir, despedido, despedida, expulsar, expulsado, expulsada, ejecución, ejecucion, ejecutar, matar, muerto, muerta, límite, limites, límites, amenaza, amenazas, amenazar, sirviente, sirvientes, criado, criada, criados, criadas`
 
 Optional Filter:
 
@@ -295,27 +297,27 @@ Order:
 
 `240`
 
-Content:
+Contenido:
 
 ```text
-Lower-class men are not automatically protected by the curse. Skill matters. A servant who correctly distinguishes desired loss of dignity from genuine hatred or broken trust may gain unusual private influence, but a servant who pushes crudely, violates real boundaries, betrays trust or mistakes arousal for immunity can be dismissed, punished or even killed. Formal coercive institutions still exist, though they are used comparatively rarely in this long-peaceful society.
+Los hombres de clase baja no están protegidos automáticamente por la maldición. La habilidad importa. Un sirviente que distingue correctamente entre una pérdida de dignidad deseada y odio genuino o confianza rota puede adquirir una influencia privada inusual, pero un sirviente que presiona de forma burda, viola límites reales, traiciona la confianza o confunde excitación con inmunidad puede ser despedido, castigado o incluso asesinado. Las instituciones coercitivas formales siguen existiendo, aunque se utilizan con relativa poca frecuencia en esta sociedad que lleva mucho tiempo en paz.
 ```
 
 ---
 
-## ENTRY 010 — Crown and succession
+## ENTRADA 010 — Corona y sucesión
 
-Title / Memo:
+Título / Memo:
 
-`Crown — Succession and Lafiel`
+`Corona — Sucesión y Lafiel`
 
-Strategy:
+Estrategia:
 
 `SELECTIVE` / Green Circle
 
 Primary Keys:
 
-`Lafiel, Crown, crown, throne, succession, heir, princess, queen, king, royal, royalty`
+`Lafiel, Crown, crown, throne, succession, heir, princess, queen, king, royal, royalty, Corona, corona, trono, sucesión, sucesion, heredero, heredera, princesa, reina, rey, realeza`
 
 Optional Filter:
 
@@ -325,31 +327,31 @@ Order:
 
 `250`
 
-Content:
+Contenido:
 
 ```text
-The Crown remains the apex of the hereditary order. Lafiel is an adult royal princess and one of several siblings/candidates competing for succession. She is among the strongest candidates despite being one of the youngest. Her ambition is to become queen and govern exceptionally well; she does not seek democratization or dilution of royal authority. Almion is extremely high nobility but remains formally beneath the Crown and accepts that precedence as normal.
+La Corona sigue siendo la cúspide del orden hereditario. Lafiel es una princesa real adulta y una de varios hermanos/candidatos que compiten por la sucesión. Se encuentra entre las candidatas más fuertes a pesar de ser una de las más jóvenes. Su ambición es convertirse en reina y gobernar excepcionalmente bien; no busca democratización ni una reducción de la autoridad real. Almion pertenece a la altísima nobleza, pero permanece formalmente por debajo de la Corona y acepta esa precedencia como normal.
 ```
 
-Note:
+Nota:
 
-The exact number/distribution of Lafiel's siblings is intentionally NOT defined here because RP Architect has not closed that canon detail.
+El número y distribución exactos de los hermanos de Lafiel NO se definen intencionadamente aquí porque RP Architect todavía no ha cerrado ese detalle del canon.
 
 ---
 
-## ENTRY 011 — Research into the curse
+## ENTRADA 011 — Investigación de la maldición
 
-Title / Memo:
+Título / Memo:
 
-`Curse — Research State`
+`Maldición — Estado de la investigación`
 
-Strategy:
+Estrategia:
 
 `SELECTIVE` / Green Circle
 
 Primary Keys:
 
-`curse, cure, cured, origin, creator, entity, demon, angel, god, research, investigate, investigation, experiment, theory, theories`
+`curse, curses, cure, cured, origin, creator, entity, demon, angel, god, research, investigate, investigation, experiment, theory, theories, maldición, maldicion, maldiciones, cura, curar, curado, curada, origen, creador, creadora, entidad, demonio, ángel, angel, dios, diosa, investigación, investigacion, investigaciones, investigar, experimento, experimentos, teoría, teoria, teorías, teorias`
 
 Optional Filter:
 
@@ -359,39 +361,39 @@ Order:
 
 `260`
 
-Content:
+Contenido:
 
 ```text
-Lafiel and Almion are still in the observation and investigation stage. They possess no definitive explanation for the curse's origin, creator, mechanism or purpose and no proven cure. They may form hypotheses, compare cases and conduct controlled observations, but the narration must not promote an unconfirmed theory into objective truth. Their shared long-term goal is to restore aristocratic autonomy from the curse while retaining aristocratic rule.
+Lafiel y Almion siguen en la fase de observación e investigación. No poseen una explicación definitiva sobre el origen, creador, mecanismo o propósito de la maldición ni una cura demostrada. Pueden formular hipótesis, comparar casos y realizar observaciones controladas, pero la narración no debe elevar una teoría no confirmada a verdad objetiva. Su objetivo compartido a largo plazo es restaurar la autonomía aristocrática frente a la maldición manteniendo al mismo tiempo el gobierno aristocrático.
 ```
 
 ---
 
-## Determinism requirements
+## Requisitos de determinismo
 
-For this pilot:
+Para este piloto:
 
-- Do not use Vectorized/embedding activation.
-- Do not use probability below 100%.
-- Do not use inclusion groups.
-- Do not use timed effects.
-- Do not use automation IDs.
-- Do not use Author's Note positions.
-- Do not introduce recursive lore chains beyond the explicitly authorized global recursion depth of `1`.
+- No usar activación Vectorized/embeddings.
+- No usar probabilidad inferior al 100%.
+- No usar inclusion groups.
+- No usar timed effects.
+- No usar automation IDs.
+- No usar posiciones de Author's Note.
+- No introducir cadenas recursivas de lore más allá de la profundidad global de recursión `1` explícitamente autorizada.
 
-The goal is predictable, inspectable activation during the first RP test.
+El objetivo es una activación predecible e inspeccionable durante la primera prueba del RP.
 
-## Verification
+## Verificación
 
-When implementation becomes authorized, verify with WorldInfo Info + Prompt Inspector:
+Cuando la implementación esté autorizada, verificar con WorldInfo Info + Prompt Inspector:
 
-1. Global `Max Recursion Steps` is exactly `1`.
-2. Global `Alert on overflow` is `ON`.
-3. No other global World Info setting was changed by this package.
-4. Entries 001, 002, 004, 005, 006, 007 and 008 are active every generation in the bound group chat.
-5. Entry 003 is inactive without settlement/location keys and activates when one of its keys appears.
-6. Entry 009 is inactive without boundary/discipline/servant-related keys and activates on a matching key.
-7. Entry 010 activates when Lafiel/Crown/succession terminology enters scanned context.
-8. Entry 011 activates when curse/research terminology enters scanned context.
-9. No entry from this lorebook activates in unrelated chats.
-10. No unrelated lorebook content appears because of this package.
+1. `Max Recursion Steps` global es exactamente `1`.
+2. `Alert on overflow` global está `ON`.
+3. Este paquete no cambió ningún otro ajuste global de World Info.
+4. Las entradas 001, 002, 004, 005, 006, 007 y 008 están activas en cada generación del chat grupal vinculado.
+5. La entrada 003 está inactiva sin claves de asentamiento/localización y se activa cuando aparece una de sus claves españolas o inglesas.
+6. La entrada 009 está inactiva sin claves relacionadas con límites/disciplina/sirvientes y se activa con una clave coincidente española o inglesa.
+7. La entrada 010 se activa cuando entra en el contexto escaneado terminología de Lafiel/Corona/sucesión en español o inglés.
+8. La entrada 011 se activa cuando entra en el contexto escaneado terminología de maldición/investigación en español o inglés.
+9. Ninguna entrada de este lorebook se activa en chats no relacionados.
+10. No aparece contenido de lorebooks no relacionados a causa de este paquete.
