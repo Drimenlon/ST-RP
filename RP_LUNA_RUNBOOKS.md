@@ -20,7 +20,7 @@ Baseline del host: **SillyTavern 1.19.0 stable (adopted).** `LUNA_READY` se limi
 
 - **Estado:** validado / adoptado.
 - **Propósito:** observar el estado real de activación de World Info.
-- **Límite:** el panel refleja el último contexto construido y puede quedar desactualizado hasta que se reconstruya el contexto.
+- **LímITE:** el panel refleja el último contexto construido y puede quedar desactualizado hasta que se reconstruya el contexto.
 - **LUNA_READY:** YES para workflows conocidos de instalación/configuración/smoke test. Reconstruir el contexto antes de confiar en un cambio de estado de activación.
 
 ## Memory Books
@@ -97,8 +97,12 @@ Los siguientes mappings fueron validados contra el source local de SillyTavern 1
 - Derivar únicamente del preset base indicado por el paquete. Nunca usar como autoridad el preset actualmente seleccionado.
 - Preservar provider, model, connection y generation fields que el paquete marque como no gestionados.
 - Reemplazar únicamente el contenido de prompt explícitamente gestionado por el RP, usando el source text de forma literal.
-- Si existe ya un preset con el nombre objetivo, actualizarlo solo cuando ownership/contenido previo pueda demostrarse de forma segura. De lo contrario, STOP; no crear un duplicado para esquivar la colisión.
-- Verificar selección esperada en el grupo, read-back de los campos gestionados y Prompt Inspector para detectar contaminación de otro RP antes de cualquier generación autorizada.
+- No inventar campos de metadata u ownership si el formato de preset de SillyTavern no ofrece una superficie validada para almacenarlos. La ausencia de `rp_infrastructure` en un preset no es por sí sola motivo de STOP.
+- Si existe ya un preset con el nombre objetivo y dispone de un marcador de ownership validado por el formato, exigir que ese marcador coincida.
+- Si existe ya un preset con el nombre objetivo pero no dispone de una superficie validada de ownership, puede demostrarse ownership mediante **content-prior verification** únicamente cuando la especificación READY lo autorice explícitamente y nombre una versión previa autoritativa e inmutable del paquete (por ejemplo, commit SHA o contenido previo cerrado). Deben cumplirse simultáneamente: nombre destino exacto; familia API exacta; coincidencia literal de **todos** los campos gestionados con esa versión previa; ausencia de contenido gestionado perteneciente a otro RP; y cualquier binding/selección esperada que la especificación declare verificable. El nombre visible o la selección del preset por sí solos nunca bastan.
+- Si falta la versión previa autoritativa, algún campo gestionado difiere, existe contenido contradictorio, aparecen varios candidatos o cualquier parte de la prueba es ambigua, hacer STOP. No crear un duplicado, no adoptar el preset por inferencia y no añadir metadata inventada para forzar ownership.
+- Tras una actualización autorizada mediante content-prior verification, verificar por read-back que los campos gestionados coinciden literalmente con el paquete actual y preservar intactos todos los campos no gestionados.
+- Verificar selección esperada en el grupo/chat, read-back de los campos gestionados y Prompt Inspector para detectar contaminación de otro RP antes de cualquier generación autorizada.
 - Para `Lafiel & Almion`, el paquete actual ya proporciona `preset_api_family: openai`, `preset_base: Default`, `preset_name: Lafiel & Almion` y el mapping exacto en `PRESET_PROMPTS.md`; esta precondición está cerrada.
 
 ## Sesión API local segura de SillyTavern
