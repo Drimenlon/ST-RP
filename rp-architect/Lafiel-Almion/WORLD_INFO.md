@@ -22,15 +22,25 @@ If the current Luna runbooks do not authorize creation/binding of this exact Wor
 
 ## Activation settings
 
-RP-specific requirements:
+### Global World Info settings
 
-- Include Names: `ON`
-- Case-sensitive keys: `OFF`
-- Match whole words: `ON`
-- Max Recursion Steps: `1` (no recursive activation chain required for this pilot)
-- Alert on overflow: `ON`
-- Context/Budget: preserve the currently validated global value; this RP does not authorize changing the global World Info budget.
-- Min Activations: `0`
+This RP package does **not own or require specific values for SillyTavern's global World Info settings**.
+
+Preserve the runtime's existing global values. Do not change global World Info configuration for this RP.
+
+In particular, this package does not require any specific value for:
+
+- Include Names;
+- Case-sensitive keys;
+- Match whole words;
+- Max Recursion Steps;
+- Alert on overflow;
+- global Context/Budget;
+- Min Activations.
+
+The pilot intentionally avoids recursive lore chains and does not depend on overflow alerts. Runtime values such as `Max Recursion Steps = 0` and `Alert on overflow = OFF` are therefore acceptable and must be preserved.
+
+### Entry-level defaults
 
 Unless an entry says otherwise:
 
@@ -365,16 +375,17 @@ For this pilot:
 - Do not use Author's Note positions.
 - Do not introduce recursive lore chains.
 
-The goal is predictable, inspectable activation during the first RP test.
+The goal is predictable, inspectable activation during the first RP test without changing global World Info behavior.
 
 ## Verification
 
 When implementation becomes authorized, verify with WorldInfo Info + Prompt Inspector:
 
 1. Entries 001, 002, 004, 005, 006, 007 and 008 are active every generation in the bound group chat.
-2. Entry 003 is inactive without settlement/location keys and activates when one of its keys appears.
-3. Entry 009 is inactive without boundary/discipline/servant-related keys and activates on a matching key.
-4. Entry 010 activates when Lafiel/Crown/succession terminology enters scanned context.
-5. Entry 011 activates when curse/research terminology enters scanned context.
+2. Entry 003 is inactive without settlement/location keys and activates when one of its keys appears under the existing global matching behavior.
+3. Entry 009 is inactive without boundary/discipline/servant-related keys and activates on a matching key under the existing global matching behavior.
+4. Entry 010 activates when Lafiel/Crown/succession terminology enters scanned context under the existing global matching behavior.
+5. Entry 011 activates when curse/research terminology enters scanned context under the existing global matching behavior.
 6. No entry from this lorebook activates in unrelated chats.
 7. No unrelated lorebook content appears because of this package.
+8. Existing global World Info settings remain unchanged.
