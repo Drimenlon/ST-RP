@@ -15,28 +15,55 @@ rp-architect/
     ├── LAFIEL.md
     ├── ALMION.md
     ├── WORLD.md
+    ├── WORLD_INFO.md
     ├── GROUP.md
     ├── NARRATIVE_RULES.md
     └── OPENING.md
 ```
 
-Los archivos de personaje contienen únicamente la definición operativa de ese personaje. El mundo, reglas narrativas, estado del grupo/escenario y opening se mantienen separados para evitar duplicación y contradicciones.
+Los archivos de personaje contienen la definición operativa de cada personaje. El mundo, World Info, reglas narrativas, estado del grupo/escenario y opening se mantienen separados para evitar duplicación y contradicciones.
 
 ## Contrato de consumo
 
 El `README.md` de cada grupo es el **manifest autoritativo** para ese RP. Debe indicar:
 
-- identidad y status del RP;
+- identidad del RP;
+- `rp_architect_status`;
+- estado técnico de ejecución por separado;
 - archivos que forman parte del paquete;
 - orden de lectura;
 - mapping semántico de cada archivo hacia SillyTavern;
-- qué capacidades técnicas requiere;
-- qué decisiones siguen abiertas;
+- capacidades técnicas requeridas;
 - qué debe preservar Luna;
 - verificaciones posteriores;
 - condiciones de STOP.
 
 Luna no debe descubrir archivos por intuición ni inferir cómo combinarlos. Debe seguir el README del grupo y los contratos globales de la raíz del repositorio.
+
+## Separación obligatoria de estados
+
+No confundir cierre semántico con readiness técnico.
+
+### `rp_architect_status`
+
+Lo decide RP Architect.
+
+- `READY`: historia, personajes, relaciones, mundo, reglas narrativas, knowledge boundaries, escenario y demás intención semántica requerida por el paquete están cerrados para esta versión del RP.
+- `DRAFT`: todavía falta una decisión creativa/semántica real de RP Architect.
+
+Una capability técnica todavía no estabilizada, un preset que necesite mapping técnico, o un runbook ausente **NO convierte por sí mismo un RP semánticamente cerrado en DRAFT**.
+
+### `technical_execution_status`
+
+Describe si el paquete puede aplicarse mecánicamente con los contratos/runbooks actuales.
+
+Valores habituales:
+
+- `READY_FOR_LUNA`: todas las operaciones necesarias están cerradas y Luna-ready.
+- `PENDING_INFRASTRUCTURE_VALIDATION`: el RP está semánticamente cerrado, pero Infrastructure/Luna debe comprobar bindings, mappings o capabilities técnicas.
+- `BLOCKED_<CAPABILITY>`: una capability técnica concreta impide completar la implementación.
+
+Un bloqueo técnico debe devolverse a Infrastructure/Sol en la capability afectada; no reabre automáticamente la semántica del RP.
 
 ## Ownership
 
@@ -59,4 +86,6 @@ Para ejecución siguen siendo autoritativos:
 - `RP_READY_SPEC_SCHEMA.md`
 - `RP_LUNA_RUNBOOKS.md`
 
-Si un README de grupo marca el paquete como no READY, Luna debe detenerse y devolverlo para cierre semántico/técnico en lugar de improvisar.
+Si `rp_architect_status: DRAFT`, Luna debe STOP porque falta cierre semántico.
+
+Si `rp_architect_status: READY` pero existe un bloqueo técnico, Luna debe preservar el paquete como semánticamente cerrado, reportar la capability/binding técnico concreto que falta y seguir los contratos globales sin improvisar.
