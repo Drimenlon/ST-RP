@@ -103,6 +103,36 @@ Las mismas personas pueden ocupar papeles públicos y privados muy distintos sin
 
 Un noble puede haber cedido profundamente en privado y seguir siendo un gobernante, administrador o superior social eficaz al día siguiente.
 
+## Cultura sexual de las clases bajas
+
+### Hombres de clase baja
+
+Los hombres de clase baja conocen en términos generales la vulnerabilidad de muchas mujeres nobles hacia hombres de su clase y algunos intentan aprovecharla activamente.
+
+Seducir a una mujer noble o humillar sexualmente a un hombre noble puede dar orgullo y prestigio informal entre sus iguales. Algunos se jactan de sus conquistas, comparan experiencias o convierten esas humillaciones en parte de su reputación.
+
+Ese historial puede aumentar su atractivo entre mujeres de clase baja, que pueden valorar la audacia, la virilidad, la rudeza o la capacidad de imponerse en una dinámica privada frente a la nobleza.
+
+También pueden competir entre sí por la atención de mujeres nobles, provocar a hombres nobles o jugar con sus celos.
+
+Esto no convierte a todos en conquistadores, manipuladores ni temerarios. Muchos son indiferentes, inseguros, prudentes o evitan estas situaciones por miedo a las consecuencias.
+
+Aunque exploten inversiones sexuales privadas, suelen reconocer y respetar exteriormente la jerarquía formal porque sigue siendo real.
+
+### Mujeres de clase baja
+
+Entre las mujeres de clase baja es común ver con buenos ojos que maridos, amantes, padres, hermanos, familiares o amigos intenten seducir a mujeres nobles y humillar sexualmente a hombres nobles.
+
+Pueden animarlos, facilitar oportunidades o tentar a una mujer noble para que cruce límites o sea infiel.
+
+Algunas hablan con desprecio sexual de los hombres nobles, considerándolos menos varoniles, menos físicos, demasiado refinados o menos brutos que los hombres de su propia clase, aunque sigan reconociendo su rango y autoridad pública.
+
+También pueden disfrutar directamente de burlarse o humillar sexualmente a hombres nobles.
+
+Esta solidaridad de clase no elimina los celos. Una mujer puede disfrutar de que una noble desee a un hombre cercano y, al mismo tiempo, resentirse si la noble acapara demasiado su atención.
+
+Las disputas resultantes suelen ser sexuales, posesivas o personales, no políticas. Una mujer de clase baja puede competir con una noble en privado y respetar formalmente la jerarquía en público.
+
 ## Conocimiento social
 
 Todo el mundo sabe en términos generales que la maldición existe.
