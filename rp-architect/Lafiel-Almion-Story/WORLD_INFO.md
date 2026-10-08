@@ -260,6 +260,70 @@ La jerarquía formal sigue siendo plenamente real incluso cuando la maldición p
 
 ---
 
+## ENTRADA 014 — Hombres de clase baja y dinámica sexual de clase
+
+Esta entrada conserva el ID estable 014, pero usa `Order 235` para situarse semánticamente entre la jerarquía general (008) y los límites/consecuencias (009) sin renumerar entradas ya materializadas.
+
+Título / Memo:
+
+`Sociedad — Hombres de clase baja y dinámica sexual de clase`
+
+Estrategia:
+
+`SELECTIVE`
+
+Primary Keys:
+
+`lower-class man, lower-class men, man of lower class, men of lower class, male servant, male servants, male worker, male workers, plebeian man, plebeian men, commoner man, commoner men, village man, village men, hombre de clase baja, hombres de clase baja, sirviente varón, sirvientes varones, criado, criados, trabajador, trabajadores, obrero, obreros, plebeyo, plebeyos, aldeano, aldeanos`
+
+Optional Filter:
+
+`NONE`
+
+Order:
+
+`235`
+
+Contenido:
+
+```text
+Los hombres de clase baja conocen en términos generales la vulnerabilidad de muchas mujeres nobles hacia hombres de su clase y algunos intentan aprovecharla activamente. Seducir a una mujer noble o humillar sexualmente a un hombre noble puede dar orgullo y prestigio informal entre sus iguales; algunos se jactan de sus conquistas, comparan experiencias o convierten esas humillaciones en parte de su reputación. Ese historial puede aumentar su atractivo entre mujeres de clase baja, que pueden valorar la audacia, la virilidad, la rudeza o la capacidad de imponerse en una dinámica privada frente a la nobleza. También pueden competir entre sí por la atención de mujeres nobles, provocar a hombres nobles o jugar con sus celos. Esto no convierte a todos en conquistadores, manipuladores ni temerarios: muchos son indiferentes, inseguros, prudentes o evitan estas situaciones por miedo a las consecuencias. Aunque exploten inversiones sexuales privadas, suelen reconocer y respetar exteriormente la jerarquía formal porque sigue siendo real.
+```
+
+---
+
+## ENTRADA 015 — Mujeres de clase baja y dinámica sexual de clase
+
+Esta entrada conserva el ID estable 015, pero usa `Order 237` para situarse junto a la entrada masculina y antes de los límites/consecuencias, sin renumerar entradas ya materializadas.
+
+Título / Memo:
+
+`Sociedad — Mujeres de clase baja y dinámica sexual de clase`
+
+Estrategia:
+
+`SELECTIVE`
+
+Primary Keys:
+
+`lower-class woman, lower-class women, woman of lower class, women of lower class, female servant, female servants, female worker, female workers, plebeian woman, plebeian women, commoner woman, commoner women, village woman, village women, mujer de clase baja, mujeres de clase baja, sirvienta, sirvientas, criada, criadas, trabajadora, trabajadoras, obrera, obreras, plebeya, plebeyas, aldeana, aldeanas, mujer del pueblo, mujeres del pueblo`
+
+Optional Filter:
+
+`NONE`
+
+Order:
+
+`237`
+
+Contenido:
+
+```text
+Entre las mujeres de clase baja es común ver con buenos ojos que maridos, amantes, padres, hermanos, familiares o amigos intenten seducir a mujeres nobles y humillar sexualmente a hombres nobles. Pueden animarlos, facilitar oportunidades o tentar a una mujer noble para que cruce límites o sea infiel. Algunas hablan con desprecio sexual de los hombres nobles, considerándolos menos varoniles, menos físicos, demasiado refinados o menos brutos que los hombres de su propia clase, aunque sigan reconociendo su rango y autoridad pública. También pueden disfrutar directamente de burlarse o humillar sexualmente a hombres nobles. Esta solidaridad de clase no elimina los celos: una mujer puede disfrutar de que una noble desee a un hombre cercano y, al mismo tiempo, resentirse si la noble acapara demasiado su atención. Las disputas resultantes suelen ser sexuales, posesivas o personales, no políticas; una mujer de clase baja puede competir con una noble en privado y respetar formalmente la jerarquía en público.
+```
+
+---
+
 ## ENTRADA 009 — Límites, castigo y habilidad de las clases bajas
 
 Título / Memo:
@@ -435,6 +499,8 @@ Entry IDs estables:
 011: lafiel-almion-story:worldinfo:011
 012: lafiel-almion-story:worldinfo:012
 013: lafiel-almion-story:worldinfo:013
+014: lafiel-almion-story:worldinfo:014
+015: lafiel-almion-story:worldinfo:015
 ```
 
 Actualizar únicamente recursos con marker de ownership coincidente. Nombre/memo visible no prueba ownership.
@@ -446,7 +512,7 @@ Verificar al menos:
 1. lorebook exacto `Lafiel-Almion-Story — World`;
 2. no aparece en `Active World(s) for all chats`;
 3. está vinculado únicamente al chat individual de `Lafiel & Almion — Story`;
-4. existen exactamente 13 entradas gestionadas con sus estrategias y órdenes previstos;
+4. existen exactamente 15 entradas gestionadas con sus estrategias y órdenes previstos;
 5. `Personaje — Lafiel` y `Personaje — Almion` se activan siempre;
 6. las entradas SELECTIVE responden a terminología española e inglesa según sus keys;
 7. `Max Recursion Steps = 1` y `Alert on overflow = ON`;
